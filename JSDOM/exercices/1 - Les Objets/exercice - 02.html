@@ -70,23 +70,17 @@
             alert('Les types de données fournis sont incorrects !');
           };
         },
-        // mixerDeTout: function(k, l, m, n){
-        //   if(typeof k == 'string' && typeof l == 'object' && typeof m == 'function' && typeof n == 'number'){
-        //     alert('Voici un message : ' + k);
-        //     alert('Voici un message trouvé dans un objet : ' + l.message);
-        //     m();
-        //     alert('Mais ceci est un nombre : ' + n);
-        //     return n;
-        //   }else{
-        //     alert('Les types de données fournis sont incorrects !');
-        //   };
-        mixerDeTout: function(l){
-          if(typeof k == 'string' && typeof l == 'object'){
+        mixerDeTout: function(k, l, m, n){
+          if(typeof k == 'string' && typeof l == 'object' && typeof m == 'function' && typeof n == 'number'){
             alert('Voici un message : ' + k);
             alert('Voici un message trouvé dans un objet : ' + l.message);
-            }else{
+            m();
+            alert('Mais ceci est un nombre : ' + n);
+            return n;
+          }else{
             alert('Les types de données fournis sont incorrects !');
           };
+       
         }
       };
 
@@ -101,8 +95,9 @@
       // blender.mixerDesBooleens(true,true,false);
       // blender.mixerDesTableaux([10,2,3],[4,5,7]);
       // blender.mixerDesObjets(o = {a : 20, b : 2},t = {x : 2, y : 5});
-      // blender.mixerDesFonctions(alert('toto'),alert('Ce n\'est pas moi!'));
-      blender.mixerDeTout('toto',l = {message : "yuyu"});
+      // blender.mixerDesFonctions(function maFonction1() {alert('toto')},function maFonction2() {alert('Ce n\'est pas moi!')});
+      blender.mixerDeTout('toto',l = {message : "yuyu"},function maFonction() {alert('Ce n\'est pas moi!')},4);
+
     </script>
   </head>
   <body>
