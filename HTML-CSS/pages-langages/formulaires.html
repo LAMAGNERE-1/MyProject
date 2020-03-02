@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les formulaires</title>
+
+    <style>
+      ::placeholder {
+        color: lightcoral;
+      }
+
+      input[type="url"]:invalid {
+        color: red;
+      }
+
+      input[type="url"]:valid {
+        color: green;
+      }
+
+      input[type="image"] {
+        height: 80px;
+        width: 130px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Les formulaires</h1>
+    </header>
+    <main>
+      <form action="https://www.google.com/" method="GET">
+        <!-- 1ère façon pour que cliquer sur x renvoie dans la cellule: utiliser "for" et "id"-->
+        <label for="firstname">
+          Nom
+        </label>
+        <br />
+        <input
+          id="firstname"
+          type="text"
+          name="nom"
+          placeholder="Dupont"
+          maxlength="25"
+          required
+        />
+        <br />
+        <!-- <button>Envoyer !</button> -->
+        <!-- 1ème façon pour que cliquer sur x renvoie dans la cellule: mettre l'"input" dans le "label"-->
+        <label>
+          Prénom
+          <br />
+          <input type="text" name="prénom" placeholder="Pierre" />
+        </label>
+        <br />
+        <label>
+          EMail
+          <br />
+          <input type="email" name="email" placeholder="toto@exemple.fr" />
+        </label>
+        <br />
+        <label>
+          Password
+          <br />
+          <input type="password" name="motDePasse" />
+        </label>
+        <br />
+        <label>
+          Âge
+          <br />
+          <input type="number" name="age" />
+        </label>
+        <br />
+        <label for="forMen">
+          <input id="forMen" type="radio" value="homme" name="genre" />H
+        </label>
+        <br />
+        <label for="forWomen">
+          <input id="forWomen" type="radio" value="femme" name="genre" />F
+        </label>
+        <br />
+
+        <label for="forCountry">
+          Pays de résidence
+        </label>
+        <br />
+        <select name="pays" id="forCountry">
+          <option value="England">Angleterre</option>
+          <option value="Spain">Espagne</option>
+          <option value="France" selected>France</option>
+          <option value="Italy">Italie</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="">
+          Date de naissance
+          <br />
+          <input type="date" name="" id="" />
+          <br />
+        </label>
+        <br />
+
+        <label for="textZone"></label>
+        <textarea
+          name=""
+          id="textZone"
+          cols="40"
+          rows="5"
+          placeholder="Tapez ici une courte description..."
+        ></textarea>
+        <br />
+
+        <label for="singing">
+          <br />
+          <input type="checkbox" name="" id="singing" checked />Chant
+        </label>
+
+        <label for="css">
+          <br />
+          <input type="checkbox" name="" id="css" />CSS
+        </label>
+
+        <label for="html">
+          <br />
+          <input type="checkbox" name="" id="html" />HTML
+        </label>
+
+        <label for="angular">
+          <br />
+          <input type="checkbox" name="" id="angular" />ANGULAR
+        </label>
+
+        <label for="node">
+          <br />
+          <input type="checkbox" name="" id="node" />NODE
+        </label>
+        <br />
+
+        <input type="color" name="" id="" />
+        <br />
+        <input type="file" name="" id="" />
+        <br />
+        <!-- <input type="range" min="" max="" name="" id="" /> -->
+        <!-- <br /> -->
+        <!-- <input type="url" name="" id="" />
+        <br /> -->
+        <input type="image" src="../exos/images/planete.jpeg" alt="planète" />
+        <br />
+
+        <br />
+
+        <br />
+        <br />
+        <input type="submit" value="Envoyer !" />
+        <br />
+      </form>
+    </main>
+  </body>
+</html>

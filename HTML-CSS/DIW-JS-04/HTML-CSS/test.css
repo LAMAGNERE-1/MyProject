@@ -1,0 +1,41 @@
+body{
+				margin: 0; 
+				padding: 0;
+			}
+			
+			nav{
+				height: 40px; 
+				margin-top: 150px; 
+				width: 100%;
+				box-shadow: 0px 2px 5px silver;
+				backgroun: grey;
+			}
+			
+			ul{
+				margin: 0; 
+				padding: 0;
+			}
+			
+			ul li{
+				display: block; 
+				float: left;
+			}
+			
+			nav ul li a{
+				display: block;
+				min-width : 130px;
+				background: orangered;
+				color: white; 
+				font-family: arial; 
+				font-weight: bold; 
+				text-align: center; 
+				line-height: 40px; 
+				vertical-align: middle; 
+				text-decoration: one; 
+			}
+			
+			nav ul li a:hover{
+				background: white; 
+				color: orangered;
+				cursor: pointer;
+			}

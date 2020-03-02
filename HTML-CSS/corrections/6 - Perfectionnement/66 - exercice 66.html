@@ -1,0 +1,40 @@
+<!--
+	La pseudo-classe CSS :active permet de donner une/des propriété(s) spécifique(s) à l'élément qui est cliqué. :active se distingue de :focus, car l'action est prise en compte au moment même où  l'utilisateur clique. Cela permet de notifier à l'utilisateur que son action a bien été prise en compte.
+-->
+
+<!--
+	Créez une page avec un menu. Dans le menu, changez la couleur de chaque lien au moment où l'utilisateur clique dessus.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		li {
+			color: black;
+		}
+		li:first-child:active {
+			background: red;
+			width: 60px;
+			color: blue;
+		}
+		li:last-child:active {
+			background: green;
+			width: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>acceuil</li>
+			<li>contact</li>
+			<li>tuto</li>
+		</ul>
+	</div>
+</body>
+</html>

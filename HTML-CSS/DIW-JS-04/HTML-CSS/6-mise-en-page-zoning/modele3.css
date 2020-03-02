@@ -1,0 +1,35 @@
+p{
+	margin: 0;
+	padding: 0;
+}
+
+#conteneur{
+	width: 1000px;
+	margin: 0 auto;	
+}
+
+.gauche{
+	background: green; 
+	height: 500px;
+	width: 500px; 
+	float: left; 
+}
+
+.droite{
+	background: purple; 
+	height: 500px;
+	width: 500px; 
+	float: left; 
+}
+
+footer{
+	background: yellow;
+	height: 80px; 
+	width: 1000px;
+	overflow:hidden;
+}
+
+.clear{
+	clear: left;
+	/*clear: both;*/
+}

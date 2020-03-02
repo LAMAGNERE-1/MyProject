@@ -1,0 +1,49 @@
+<!--
+La balise img peut être contenue dans une balise figure. Celle-ci permet de donner un "sens" à l'image qui apporte une information complémentaire au texte.
+On peut ajouter une légende à cette image au moyen de la balise figcaption.
+Ces balises s'utilisent de la façon suivante :
+<figure>
+    <img src="mon_image.jpg" alt="Une belle image" />
+    <figcaption>Une superbe image</figcaption>
+</figure>
+Il est possible de mettre plusieurs balises img dans une une balise figure.
+-->
+
+<!--
+	1 - Créez un document contenant une balise figure.
+	2 - Cette balise comporte trois image et une légende.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exo-21</title>
+  </head>
+  <body>
+    <figure>
+      <img src="../images/ballon.png" alt="" />
+      <figcaption>Ballon</figcaption>
+      <img src="../images/homer.gif" alt="" />
+      <figcaption>Homer</figcaption>
+      <img src="../images/planete.jpeg" alt="" />
+      <figcaption>Planète</figcaption>
+    </figure>
+
+    <video controls width="500" autoplay muted loop>
+      <source src="../videos/flower.webm" type="video/webm" />
+
+      <source src="../videos/flower.mp4" type="video/mp4" />
+
+      Sorry, your browser doesn't support embedded videos.
+    </video>
+
+    <figure>
+      <figcaption>Listen to the T-Rex:</figcaption>
+      <audio controls src="../audios/t-rex-roar.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+    </figure>
+  </body>
+</html>

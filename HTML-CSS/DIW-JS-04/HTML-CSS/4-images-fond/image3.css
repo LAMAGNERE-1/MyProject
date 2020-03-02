@@ -1,0 +1,23 @@
+
+div img{
+	height:100px;
+	width: 300px;
+	margin: 15px; 
+}
+div img.img1{
+	transition: 1s ease; 
+}
+
+div img.img2{
+	transition: 1s ease-in-out; 
+}
+
+div img.img3{
+	transition: 1s linear; 
+}
+
+
+div img:hover{
+	width: 500px; 
+	height: 130px;
+}

@@ -1,0 +1,7 @@
+input:focus{
+    background: red;
+}
+input:hover {
+    background: gray;
+    transition: 2s;
+}

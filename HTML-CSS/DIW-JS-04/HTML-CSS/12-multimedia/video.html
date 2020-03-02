@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vidéo</title>
+	</head>
+	<body>
+		<h1>CIC .OGV</h1>
+		<video controls autoplay preload poster="cic.gif">
+			<source src="cic.ogv" type="video/ogg"/>
+		</video>
+		
+		<h1>CIC .WEBM</h1>
+		<video controls autoplay preload poster="cic.gif">
+			<source src="cic.webm" type="video/webm"/>
+		</video>
+		 
+		<h1>CIC .MP4</h1>
+		<video controls autoplay preload poster="cic.gif">
+			<source src="cic.mp4" type="video/mp4"/>
+		</video>
+		
+		
+		<h1>CIC</h1>
+		<video controls autoplay preload>
+			<source src="cic.ogv" type="video/ogg"/>
+			<source src="cic.webm" type="video/webm"/>
+			<source src="cic.mp4" type="video/mp4"/>
+		</video>	
+	</body>
+</html>
+
+<!-- 
+La balise vidéo, permet d'afficher (intégrer) une vidéo directement depuis notre serveur. 
+Formats : .ogg, .webm et .mp4
+Attributs : 
+autoplay
+controls : boutons de contrôle
+preload: préchargement
+loop : lecture en boucle
+la balise source permet de définir le fichier. Par mesure de sécurité il est préférable de proposer les 3 formats. 
+-->
+

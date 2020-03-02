@@ -1,0 +1,94 @@
+<!--
+Avec CSS3, il devient possible de faire du multi-colonnes dans un bloc.
+Par exemple :
+
+div {
+	column-count:2;
+	column-gap:20px;
+}
+
+Column-count indique le nombre de colonnes et column-gap l'espace entre chaque colonne.
+
+Cette propriété étant récente, il faut mettre absolument des préfixes sur les propriétés comme suit :
+
+div {
+	-moz-column-count:2;
+	-webkit-column-count:2;
+	-o-column-count:2;
+	column-count:2;
+	-moz-column-gap:20px;
+	-webkit-column-gap:20px;
+	-o-column-gap:20px;
+	column-gap:20px;
+}
+
+Pour ajouter une trait de séparation, il faut  utiliser les trois propriétés suivantes : column-rule-width, column-rule-color, column-rule-style.
+-->
+
+<!--
+1 - Créez un document avec un h1 et un paragraphe contenant au-moins 3000 caractères.
+2 - Mettez le paragraphe sur trois colonnes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exo-46</title>
+	<style>
+
+	p {
+		 -moz-column-count:3;
+		-webkit-column-count:3;
+		-o-column-count:3; 
+		column-count:3;
+		 -moz-column-gap:20px;
+		-webkit-column-gap:20px;
+		-o-column-gap:20px; 
+		column-gap:20px;
+	}
+	
+
+	</style>
+</head>
+<body>
+	<h1>Titre 1</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, recusandae adipisci? 
+		Nihil sapiente aperiam magnam cumque voluptatum at vero omnis esse sed, libero molestiae 
+		dolorem, amet natus vel quo harum. Alias optio voluptas vel excepturi ullam animi nihil at. 
+		Recusandae distinctio animi necessitatibus vitae facilis maiores ullam harum sequi reiciendis 
+		consectetur iure, a adipisci, nesciunt facere. Minus ratione aperiam quos provident, 
+		fuga possimus repellat, ut, ad error nobis ducimus impedit ipsum praesentium enim 
+		vitae neque deleniti perspiciatis? Optio, ex maxime ad omnis quaerat. Quibusdam 
+		quisquam explicabo, culpa tempora dolor sequi, incidunt consectetur. Ex et, aliquid, 
+		dicta unde possimus asperiores doloribus, qui ipsum quis, quisquam voluptate voluptatum 
+		incidunt nostrum neque ab inventore? Tempora totam veritatis nesciunt? Nemo labore, 
+		consectetur accusantium quam harum obcaecati nostrum, sed suscipit quisquam eos iste 
+		quidem saepe exercitationem omnis sit voluptas, facilis perferendis quae tenetur 
+		architecto alias reprehenderit magni soluta. Omnis, harum illo repellat deserunt dicta. 
+		Corrupti, dolorum. Fugit ab deleniti ipsa officiis explicabo ducimus ullam ipsam deserunt 
+		possimus repellat. Voluptas perspiciatis quod similique assumenda, earum molestias totam iste fuga 
+		corrupti harum enim aliquid quibusdam officia nam modi qui magni cupiditate saepe? 
+		Quae nemo nostrum, non maiores, harum eveniet error animi odit ipsam ratione ducimus fuga. 
+		At unde officiis in ipsum illo enim, corporis quidem aliquam eos accusantium vero rem, optio 
+		doloremque consectetur labore ad reprehenderit possimus. Quaerat velit, harum unde omnis sequi 
+		ipsa itaque earum placeat temporibus? Accusantium similique, delectus unde, quas sed praesentium 
+		accusamus, aliquam nostrum explicabo ratione aliquid dolores! Aut, mollitia ipsum! Repellat 
+		voluptate rem aspernatur officia iure modi natus tempore quidem reiciendis, dignissimos 
+		numquam debitis ab expedita molestiae ad iste tenetur sed quos fugit dolor deserunt. 
+		Itaque sint, repudiandae nostrum aliquam distinctio doloremque beatae excepturi earum nemo 
+		temporibus aliquid quaerat nobis maxime, quibusdam ex provident ducimus laborum modi. 
+		Autem impedit nemo voluptates excepturi doloremque dolor quasi illum quia dolorem beatae 
+		repudiandae, fugiat, vel sint ipsam quas veniam perspiciatis accusamus delectus placeat 
+		aperiam! Deleniti facilis error incidunt rerum numquam, tempore mollitia maiores vel, m
+		inus porro, voluptates corporis quis nisi modi eligendi ea cupiditate voluptate consequatur. A
+		d neque est error minus ab, molestiae iure veniam rerum quisquam ut deleniti nisi commodi lauda
+		ntium, adipisci in sunt debitis eligendi harum? Dicta exercitationem architecto ipsum qui rerum mol
+		estias suscipit velit officia numquam natus reprehenderit commodi, repellat dolores vitae possimus, acc
+		usamus atque consequatur perferendis, modi voluptatum, illo dignissimos ab labore. Dolorem velit quae, n
+		eque ratione odit beatae alias soluta suscipit ut sed laboriosam voluptate ullam laudantium obcaecati numquam 
+		</p>
+</body>
+
+</html>

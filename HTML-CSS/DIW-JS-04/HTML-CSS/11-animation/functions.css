@@ -1,0 +1,32 @@
+/**
+Une animation permet permet de changer le style d'un élément de manière graduelle. 
+Pour utiliser les animations, il faut préciser des "keyframes" qui contiennent les styles qui vont être modifiés.
+
+Il faut également paramétrer l'animation dans le css de l'élément concerné : 
+**/
+
+
+div{animation-name : exemple;} /* Nom de l'animation */
+
+div{animation-duration: 4s;} /* durée de l'animation */
+
+div{animation-delay: 2s;}/* délais avant le début de l'animation */
+
+div{animation-timing-function : linear} /* vitesse constante */
+div{animation-timing-function : ease} /* accélère puis ralentie progressivement */
+div{animation-timing-function : ease-in} /* accélère progressivement */
+div{animation-timing-function : ease-out} /* ralentie progressivement */
+div{animation-timing-function : ease-in-out} /* démarre lentement, accélère puis termine lentement */
+
+
+div{animation-direction: alternate;} /* Dans un sens puis dans l'autre */
+div{animation-direction: reverse;} /* sens inverse */
+
+div{animation-iteration-count: 3;} /* Nombre de fois */
+div{animation-iteration-count: infinite;} /* en boucle */
+
+
+/* short hand */
+div{
+	animation : exemple 3s linear 2s infinite alternate
+}

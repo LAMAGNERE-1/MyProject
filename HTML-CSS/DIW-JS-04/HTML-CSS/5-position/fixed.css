@@ -1,0 +1,25 @@
+body{
+	margin: 0; 
+	padding: 0; 
+}
+
+nav{
+	text-align: center; 
+	background : grey; 
+	color: white; 
+	position: fixed;
+	width: 70%; 
+	top: 0; 
+	height: 50px; 
+	line-height: 50px;
+	vertical-align: midle; 
+	z-index: 2;
+	left: 15%;
+}
+
+article{
+	width: 950px; 
+	margin: 70px auto; 
+	padding: 30px; 
+	box-shadow: 0px 3px 7px silver; 
+}

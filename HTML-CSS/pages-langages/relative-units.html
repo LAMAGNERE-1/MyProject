@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        div.em-unit {
+            font-size: 0.5rem;
+        }
+
+        div.em-unit h2 {
+            font-size: 1.5em;
+        }
+
+        div.em-unit p {
+            font-size: 1em;
+        }
+
+        div.rem-unit {
+            font-size: 22px;
+        }
+
+        div.rem-unit p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            html {
+                font-size: 30px;
+            }
+
+            div.rem-unit p {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="em-unit">
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos, repellendus illo magnam provident mollitia quam? Facere, praesentium. Sapiente excepturi magni deleniti pariatur officiis adipisci, iste, consequuntur quas praesentium omnis perferendis!
+        </p>
+    </div>
+
+    <div class="rem-unit">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, repudiandae. Illo modi deleniti alias similique commodi nesciunt optio vero temporibus adipisci vel. Reprehenderit aspernatur laboriosam cupiditate, atque ullam libero vero.
+        </p>
+    </div>
+</body>
+</html>

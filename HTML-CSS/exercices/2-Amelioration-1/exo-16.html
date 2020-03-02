@@ -1,0 +1,57 @@
+<!--
+Dans le fragment de page suivant,
+<div>
+	<p>Un texte</p>
+</div>
+<div>
+	<a href="http://www.site.fr">
+		<p>Un autre texte</p>
+	</a>
+</div>
+
+Quand on écrit, par exemple,
+
+div p{
+	color: red;
+}
+
+,tous les p auront la couleur du texte en rouge.
+Si on écrit,
+
+div>p{
+	color: red;
+}
+
+seul <p>Un texte</p> sera en rouge.
+-->
+
+<!--
+	1 - Créez un document contenant un strong et deux p.
+	2 - Le premier p contient un strong.
+	3 - Le second p contient un cite qui contient un strong.
+	4 - Sans utiliser d'id ou de class ou de style écrit dans la balise, mettez une couleur différente sur chacun des strong.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/styles-exo-16.css" />
+    <title>Exo-16</title>
+    <style>
+      p strong {
+        color: blueviolet;
+      }
+
+      cite strong {
+        color: chartreuse;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+<p>Il est allé à la <strong>plage</strong> avec son surf.</p>
+
+<p>
+  Il <cite>faisait <strong>très</strong></cite> beau.
+</p>

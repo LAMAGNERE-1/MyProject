@@ -1,0 +1,39 @@
+#span1 {
+  color: cornsilk;
+  background-color: crimson;
+}
+
+#span2 {
+  color: darkblue;
+  background-color: darkolivegreen;
+  display: block;
+}
+
+#span3 {
+  color: darkred;
+  background-color: darkorange;
+  display: block;
+}
+
+#div1 {
+  color: black;
+  font-family: fantasy;
+}
+
+#div2 {
+  color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#div3 {
+  color: blue;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div {
+  display: block;
+}
+
+.span {
+  display: inline;
+}

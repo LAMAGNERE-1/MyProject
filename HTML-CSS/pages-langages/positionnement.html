@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        height: 1000px;
+      }
+
+      div {
+        width: 200px;
+        height: 100px;
+      }
+
+      div:nth-of-type(1) {
+        background-color: red;
+        position: static; /*position classique*/
+      }
+
+      div:nth-of-type(2) {
+        background-color: orange;
+        position: relative; /*position par rapport à sa position classique*/
+        left: 20px;
+        top: 20px;
+      }
+
+      div:nth-of-type(3) {
+        background-color: blue;
+        position: absolute; /*position par rapport à son 1er parent positioné: il est sorti du flow de la page*/
+        left: 500px;
+        top: 200px;
+        /* z-index: 0; */
+      }
+
+      /*div:nth-of-type(4) {
+        background-color: purple;
+        position: fixed; /*position figée par rapport à la page, à l'écran*/
+      /*}*/
+
+      header {
+        background-color: purple;
+        position: fixed;
+        height: 80px;
+        width: 100%;
+        color: white;
+        z-index: 1;
+        background-image: url("../Maison/Moi/images/planete.jpeg");
+      }
+
+      .fix-header {
+        height: 150px;
+      }
+
+      .relative-absolute {
+        border: 2px dashed black;
+        height: 300px;
+        position: relative;
+        /* background-image: url("../Maison/Moi/images/homer.png"); */
+      }
+
+      .retour-en-haut {
+        width: 100px;
+        height: 100px;
+        border-radius: 60%;
+        background-color: grey;
+        position: fixed;
+        bottom: 40px;
+        right: 40px;
+      }
+
+      a {
+        color: blue;
+        padding-top: 5px;
+      }
+
+      button {
+        margin-top: 40px;
+        margin-left: 27px;
+        background-color: grey;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>HEADER</header>
+
+    <section class="fix-header"></section>
+
+    <p id="top">Haut</p>
+
+    <div>
+      <img src="../Maison/Moi/images/planete.jpeg" alt="" />
+    </div>
+    <div></div>
+    <div></div>
+
+    <section class="relative-absolute">
+      <!-- <img src="../Maison/Moi/images/homer.gif" alt="" /> -->
+      <div>
+        <img src="../Maison/Moi/images/planete.jpeg" alt="planete" />static
+      </div>
+      <div>relative</div>
+      <div>absolue</div>
+    </section>
+    <div class="retour-en-haut">
+      <button>
+        <a href="#top">Haut</a>
+      </button>
+    </div>
+  </body>
+</html>

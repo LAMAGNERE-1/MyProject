@@ -1,0 +1,24 @@
+section{
+	background: silver; 
+	width: 770px; 
+	padding: 10px; 
+	overflow: hidden;
+}
+
+ul{
+	display: table;
+	width: 1300px; 
+	margin: 0; 
+	padding: 0;
+	animation: vehicule 10s ease 5s alternate none infinite;
+}
+
+li{
+	display: table-cell; /* simule les cellule d'un tableau */
+}
+
+@keyframes vehicule{
+	0%, 30%{transform : translateX(0px);}
+	30%, 60%{transform : translateX(-260px);}
+	60%, 100%{transform : translateX(-520px);}
+}

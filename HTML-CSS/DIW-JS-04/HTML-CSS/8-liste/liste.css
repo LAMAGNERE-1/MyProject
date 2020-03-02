@@ -1,0 +1,13 @@
+ul.fruit{
+	list-style : none;
+	/*circle, square, par défaut disc  */
+}
+
+ul.fruit{
+	list-style-image : url('fleche.gif');
+}
+
+ul{
+	margin: 0;
+	padding-left: 15px;	
+}
