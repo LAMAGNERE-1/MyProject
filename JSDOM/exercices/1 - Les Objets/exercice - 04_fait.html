@@ -92,17 +92,29 @@
         POUR CHAQUE élève dans la classe, AFFICHEZ dans un boite de dialogue le message (où X et Y sont les prénoms et noms de l'élève considéré): 'Je suis X Y et je suis présent'. 
       */
       
-      for (var eleve in classe) {
-        var nomEleve = classe.lesEleves[eleve.nom];
-        var prenomEleve = classe.lesEleves[eleve.prenom];
-        console.log ("message", "Je suis " + nomEleve + ' ' + prenomEleve + ' et je suis présent');
-      }
+      for (var eleve in classe.lesEleves) {
+        var nomEleve = classe.lesEleves[eleve].nom;
+        var prenomEleve = classe.lesEleves[eleve].prenom;
+        var saPresence = classe.lesEleves[eleve].presence;
+          console.log ("message", "Je suis " + nomEleve + ' ' + prenomEleve + ' et je suis présent');
+      };
 
 
       /*
         7. Assurez vous que les booléens de présence des élèves ne sont pas tous les mêmes. Réalisez l'algorithme suivant : 
         POUR CHAQUE élève dans la classe, SI sa propriété présence est vraie, AFFICHEZ dans un boite de dialogue le message (où X et Y sont les prénoms et noms de l'élève considéré): 'Je suis X Y et je suis présent'. 
       */ 
+
+      for (var eleve in classe.lesEleves) {
+        var nomEleve = classe.lesEleves[eleve].nom;
+        var prenomEleve = classe.lesEleves[eleve].prenom;
+        var saPresence = classe.lesEleves[eleve].presence;
+        if (saPresence) {
+          console.log ("message", "Je suis " + nomEleve + ' ' + prenomEleve + ' et je suis présent');
+        }
+      };
+
+
     </script>
   </head>
   <body>
