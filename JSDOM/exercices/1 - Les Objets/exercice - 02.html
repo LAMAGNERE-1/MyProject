@@ -94,9 +94,16 @@
       // blender.mixerDesChaines("Frédéric","LAMAGNERE");
       // blender.mixerDesBooleens(true,true,false);
       // blender.mixerDesTableaux([10,2,3],[4,5,7]);
-      // blender.mixerDesObjets(o = {a : 20, b : 2},t = {x : 2, y : 5});
+      // blender.mixerDesObjets(o = {a : 20, b : 2},t = {x : 2, y : 5}); // Attention, inutile de mettre o et t (idem pour mixerDeTout)
       // blender.mixerDesFonctions(function maFonction1() {alert('toto')},function maFonction2() {alert('Ce n\'est pas moi!')});
-      blender.mixerDeTout('toto',l = {message : "yuyu"},function maFonction() {alert('Ce n\'est pas moi!')},4);
+      blender.mixerDeTout(
+        'toto',
+        {message : "yuyu"},
+        function {
+          alert('Ce n\'est pas moi!')
+          },
+        4
+      );
 
     </script>
   </head>
