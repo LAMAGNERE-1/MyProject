@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Transform animation</title>
+		<style>
+			div{
+				margin-top: 100px; 
+				width: 200px; 
+				height: 100px;
+			}
+			
+			.class2d{
+				background: yellow;
+				animation: rotate2d 2s infinite;
+			}
+			
+			.class3dx{
+				background: red;
+				animation: rotate3dx 2s infinite;
+			}
+			
+			.class3dy{
+				background: blue;
+				animation: rotate3dy 2s infinite;
+			}
+			
+			
+			@keyframes rotate2d{
+				80%, 100%{transform : rotate(360deg)}
+			}
+			
+			@keyframes rotate3dx{
+				80%, 100%{transform : rotateX(360deg)}
+			}
+			
+			@keyframes rotate3dy{
+				80%, 100%{transform : rotateY(360deg)}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="class2d">Ma div 2D</div>
+		<div class="class3dx">Ma div 3Dx</div>
+		<div class="class3dy">Ma div 3Dy</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- Déformer la DIV en mettant la moitié de sa taille en largeur et le double en hauteur -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style> 
+		div.initial {
+			width: 100px;
+			height: 100px;
+			margin: 50px;
+			background-color: lightblue;
+			border: 1px solid black;
+		}
+		
+		div.transform {
+			width: 100px;
+			height: 100px;
+			margin: 50px;
+			background-color: lightblue;
+			border: 1px solid black;
+			animation: resize 1s infinite alternate;
+		}
+		
+		@keyframes resize{
+			100%{transform : scale(0.5, 2);}
+		}
+
+		</style>
+	</head>
+	<body>
+
+		<div class="initial">Initiale</div>
+		<div class="transform">Transformée</div>
+
+	</body>
+</html>

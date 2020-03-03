@@ -1,0 +1,20 @@
+video{
+	position: fixed; 
+	background: url(videoBackground.jpg) no-repeat;
+	background-size: cover; 
+	left: 0; 
+	top: 0; 
+	min-height: 100%; 
+	min-width: 100%;
+	z-index: -1000; 
+}
+
+.contenu{
+	font-family: arial; 
+	background: rgba(255, 255, 255, 0.4);
+	width: 500px; 
+	float: right; 
+	margin: 150px 0 0 0; 
+	padding: 20px; 
+	border: 1px solid white; 
+}

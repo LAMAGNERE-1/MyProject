@@ -1,0 +1,58 @@
+body {
+    background-color: #CCCCCC;
+}
+
+p {
+    color:purple;
+    background-color: #FFFF00;
+    border:2px solid red;
+    padding: 10px 8px 10px 8px;
+    /* text-align: left; */
+}
+
+a {
+    margin: 0 10px;
+}
+
+strong {
+    margin: 10px;
+}
+
+span {
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+div {
+    text-align: center;
+}
+
+#deuxième-titre {
+    color: red;
+    font-size: 50px;
+    font-family: fantasy;
+}
+
+h2 {
+    color: blue;
+    font-variant: small-caps;
+}
+
+.texte-centre {
+    text-align: center;
+}
+
+/* .hidden {
+    display: none;
+} */
+
+/* Pour le style d'un élément contenu un attribut (et ici, un attribut spécifié précisément ou qui finit par avec href$, commence par avec href^ ou qui contient avec href*) */
+[href*="z"] {
+    color: blue;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+/* p {
+    all:unset
+} */

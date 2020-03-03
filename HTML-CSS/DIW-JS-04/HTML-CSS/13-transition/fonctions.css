@@ -1,0 +1,50 @@
+/* 
+Les transition nous permettent de changer les propriétés d'un élément de manière fluide. Les transitions d'executent au moment du hover. 
+*/
+
+
+.div1{
+	height: 50px; 
+	background: red; 
+	width: 200px; 
+	/*transition: all 2s;*/
+	transition: width 2s, height 5s; 
+	/* all : la transition s'applique sur toutes les propriétés modifiées
+	Sinon je précise la propriété
+	*/
+}
+
+.div1:hover{
+	width: 300px; 
+	height: 200px; 
+}
+
+/* sans short-hand */
+div{
+	transition-property : width;
+	transition-duration: 2s;
+	transition-timing-function : linear;
+	transition-delay: 1s;
+}
+
+/* Effets de transition */
+div{transition-timing-function : linear;}
+div{transition-timing-function : ease;}
+div{transition-timing-function : ease-in;}
+div{transition-timing-function : ease-out;}
+div{transition-timing-function : ease-in-out;}
+/* Explication des effets : voir dossier 11 animations */
+
+/* Délais vant début de la transition */
+div{transition-delay: 1s;}
+
+/* avec short-hand */
+div{
+	transition: width 2s linear 1s;
+}
+
+/* transition avec transform */
+div{
+	transition: width 2s, height 3s, transform 2s;
+}
+

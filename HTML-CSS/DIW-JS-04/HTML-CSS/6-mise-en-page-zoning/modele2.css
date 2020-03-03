@@ -1,0 +1,32 @@
+#conteneur{
+	background: #336699;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+header{
+	background: red; 
+	height: 70px; 
+	width: 1000px; 
+}
+
+.gauche{
+	background: blue; 
+	float: left; 
+	height: 600px; 
+	width: 200px; 
+}
+
+.milieu{
+	background: green; 
+	float: left; 
+	height: 600px; 
+	width: 600px;
+}
+
+.droite{
+	float: left;
+	background: maroon;
+	height: 600px;
+	width: 200px; 
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Galerie</title>
+		<link rel="stylesheet" href="galerie.css" type="text/css" />
+	</head>
+	<body>
+		<nav><!-- Menu avec images cliquables -->
+			<ul>
+				<li><a href="#zone1"><img src="images/1.jpg" width="100" height="80"/></a></li>
+				<li><a href="#zone2"><img src="images/2.jpg" width="100" height="80"/></a></li>
+				<li><a href="#zone3"><img src="images/3.jpg" width="100" height="80"/></a></li>
+				<li><a href="#zone4"><img src="images/4.jpg" width="100" height="80"/></a></li>
+				<li><a href="#zone5"><img src="images/5.jpg" width="100" height="80"/></a></li>
+			</ul>
+			<div style="clear: both;"></div>
+		</nav>
+		<div id="contenu"><!-- Contenu de notre galerie -->
+			<div id="zone1">
+				<div id="zone2">
+					<div id="zone3">
+						<div id="zone4">
+							<div id="zone5">
+								<div id="defilement">
+									<img src="images/1.jpg" class="zone1-active"/>			
+									<img src="images/2.jpg" class="zone2-active"/>
+									<img src="images/3.jpg" class="zone3-active"/>
+									<img src="images/4.jpg" class="zone4-active"/>
+									<img src="images/5.jpg" class="zone5-active"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- Imbriquer les zones les unes dans les autres me permet d'avoir accès aux photos dans chacune de ces zones -->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+p strong {
+  color: red;
+}
+
+cite > strong {
+  color: green;
+}

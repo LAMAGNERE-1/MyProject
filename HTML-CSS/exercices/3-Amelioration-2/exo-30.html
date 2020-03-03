@@ -1,0 +1,82 @@
+<!--
+On peut appliquer à un bloc un padding et une marge.
+p{
+	margin-top : 12px;
+	margin-right : 9px;
+	margin-bottom : 3px;
+	margin-left : 5px;
+	padding-top : 4px;
+	padding-right : 7px;
+	padding-bottom : 8px;
+	padding-left : 9px;
+}
+Il existe une écriture raccourcie. Voici la même déclaration que précédemment : 
+p{
+	margin: 12px 9px 3px 5px;
+	padding: 4px 7px 8px 9px;
+}
+Les quatre valeurs sont déclarées dans le sens horaire en partant du haut.
+-->
+
+<!--
+1 - Créez un document.
+2 - Vous y insérez trois div de taille identique.
+3 - Donnez à la première div des marges.
+4 - Donnez à la seconde div du padding et des marges. 
+5 - Donnez à la troisième div du padding.
+6 - Quelle différence voyez-vous entre la marge et le padding ?
+7 - Que remarquez vous sur l'espace entre la première et la seconde div ? Comment expliquez-vous cela ?
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exo-30</title>
+	<style>
+		#div1 {
+			margin: 10px;
+			background-color: blueviolet;
+			height: 100px;
+			width: 100px;
+			border: 1px solid black;
+		}
+
+		#div2 {
+			margin: 20px;
+			padding: 30px;
+			background-color: coral;
+			height: 100px;
+			width: 100px;
+			border: 1px solid black;
+		}
+
+		#div3 {
+			padding: 5px;
+			background-color: darkgreen;
+			height: 100px;
+			width: 100px;
+			border: 1px solid black;
+		}
+
+		#div4 {
+			background-color: yellow;
+			height: 50px;
+			width: 50%;
+			border: 1px solid black;
+			margin: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="div1">toto</div>
+	<div id="div2">tata</div>
+	<div id="div3">titi</div>
+	<div id="div4">
+		tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+	</div>
+</body>
+
+</html>

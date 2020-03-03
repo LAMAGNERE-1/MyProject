@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
+    max-height: 100px;
+}
+section {
+    background-color: aqua;
+    margin: 0 6% 0 6%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+h1 {
+    background: yellow;
+    text-align: center;
+    margin-top: 0;
+    font-style: italic;
+    font-size: 2em;
+}
+article .img1{
+    width: 100px;
+    float: left;
+    margin: 10px;
+}
+article .img2 {
+    width: 5%;
+    float: right;
+    margin: 10px;
+}
+article .img3 {
+    float: left;
+    margin: 10px;
+    width: 5%;
+}
+article .img4 {
+    float: left;
+    width: 5%;
+    margin: 10px;
+}
+article .img5 {
+    float: right;
+    width: 5%;
+    margin: 10px;
+}

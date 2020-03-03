@@ -1,0 +1,14 @@
+body{
+	background: #000000 url(fond1.jpg) no-repeat;
+	background-size: cover;
+}
+
+.contenu{
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 800px;
+	height: 500px;
+	margin: 200px auto;
+	padding: 10px; 
+	/*background-color: white;	
+	opacity: 0.5;*/
+}

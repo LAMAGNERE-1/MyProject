@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Combinateurs</title>
+    <style>
+      body {
+        color: red;
+      }
+
+      /* 
+      --- idem ---
+            * {
+        color: red;
+      }
+      */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-style: italic;
+        width: 20%;
+        height: 60px;
+      }
+
+      /*COMBINATEURS PARENTS-ENFANTS*/
+
+      /*toutes les li sous des ul*/
+      ul li {
+        border: 1px solid green;
+        padding: 5px;
+        color: hsl(160, 100%, 20%); /*(teinte saturation luminosité)*/
+        background-color: rgba(0, 0, 255, 0.2);
+      }
+
+      /*descendants directs*/
+      ul > li {
+        font-weight: bold;
+        border: 2px dashed black;
+      }
+
+      /*remarque: CTRL + D pour sélectionner toute une chaîne de caractères dans le fichier*/
+
+      .warning {
+        color: green;
+      }
+
+      h1.warning {
+        font-weight: bolder;
+      }
+
+      h2.warning#unique-title[title] {
+        color: red;
+      }
+
+      /*COMBINATEURS FRERES-SOEURS*/
+
+      /*"opérateur + "*/
+      /*1er élément adjacent */
+      div + p {
+        background-color: yellow;
+      }
+
+      /*peu utilisé*/
+      div + p + p {
+        background-color: greenyellow;
+      }
+
+      /*"opérateur ~ "*/
+      /* div ~ p {
+        background-color: yellow;
+      } */
+
+      /* div + p ~ p {
+        background-color: mediumspringgreen;
+      } */
+
+      /*Pseudo class*/
+      h1:hover {
+        background-color: mediumvioletred;
+      }
+
+      button {
+        border: 2px solid blue;
+        background-color: hsl(0, 0, 100%);
+        color: blue;
+        padding: 10px 20px;
+      }
+
+      button:hover {
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+
+      /* button:focus {
+        outline: 3px dashed lightsteelblue;
+      }
+
+      a:focus {
+        outline: 3px dashed lightsteelblue;
+      } */
+
+      /*ou pour tous les éléments*/
+
+      :focus {
+        outline: 3px dashed lightsteelblue;
+      }
+
+      /*LIENS*/
+
+      a:link {
+        color: orangered;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: darkslategray;
+      }
+
+      a:hover {
+        background-color: dimgray;
+      }
+
+      a:visited {
+        color: green;
+        font-size: 18px;
+      }
+
+      /*Focus*/
+    </style>
+  </head>
+  <body>
+    <h1 class="warning">1er chapitre</h1>
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <h2 class="warning" id="unique-title" title="des infos en plus">
+      2ème chapitre
+    </h2>
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <h2 class="warning">2ème chapitre</h2>
+    <p>Paragraphe 1</p>
+    <p>Paragraphe 2</p>
+    <h3 class="warning">3ème chapitre</h3>
+    <p>Paragraphe 1</p>
+    <ul>
+      <li>Elément 1</li>
+      <li>Elément 2</li>
+      <ol>
+        <li>Elément 1</li>
+        <li>Elément 2</li>
+      </ol>
+      <li>Elément 3</li>
+    </ul>
+    <p>Paragraphe 2</p>
+
+    <div>
+      <p>Paragraphe 1</p>
+      <p>Paragraphe 2</p>
+      <p>Paragraphe 3</p>
+      <p>Paragraphe 4</p>
+    </div>
+
+    <p>Paragraphe 5</p>
+    <p>Paragraphe 6</p>
+
+    <button>hover me</button>
+
+    <p>
+      <a href="https://www.google.com/">Lien vers Google</a>
+    </p>
+  </body>
+</html>

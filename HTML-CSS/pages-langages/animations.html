@@ -1,0 +1,88 @@
+<!-- Les animations ne se déclenchent pas. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les animations</title>
+    <style>
+      .carre {
+        margin: 250px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* transform: rotateZ(45deg); */
+        position: relative;
+      }
+
+      .cercle1,
+      .cercle2 {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: red;
+        position: absolute;
+      }
+
+      .cercle1 {
+        left: -50%;
+        animation: mouvement-horizontal 8000ms ease-in-out;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+      }
+
+      .cercle2 {
+        top: -50%;
+        animation: mouvement-vertical 8000ms ease-in-out;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        /* animation-fill-mode: both; */
+        animation-delay: 2000ms;
+      }
+
+      @keyframes mouvement-horizontal {
+        0% {
+          left: -50%;
+        }
+        25% {
+          left: 50%;
+        }
+        50% {
+           left: 50%;
+        }
+        75% {
+            left: -50%;
+        }
+        100% {
+            left: -50%;
+        }
+        }
+
+       @keyframes mouvement-vertical {
+        0% {
+          top: -50%;
+        }
+        25% {
+            top: 50%;
+        }
+        50% {
+            top: 50%;
+        }
+        75% {
+            top: -50%;
+        }
+        100% {
+            top: -50%;
+        }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carre">
+      <div class="cercle1"></div>
+      <div class="cercle2"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!--  Ajouter une transition de 2 secondes incluant la transformation de l'élément DIV -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style> 
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			transition: all 2s, transform 3s;
+		}
+
+		div:hover {
+			width: 300px;
+			transform: rotate(180deg);
+		}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
