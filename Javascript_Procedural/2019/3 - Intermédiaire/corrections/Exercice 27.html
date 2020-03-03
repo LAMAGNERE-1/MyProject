@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 27</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Reprenez le code de l'exercice précédent et utilisez une boucle pour afficher successivement les différentes valeurs du tableau.
+				
+				Utilisez l'attribut d'évènement onload, la fonction prompt(), deux boucles for, une boucle while et la fonction alert().
+				
+				Il n'est pas nécessaire pour la seconde boucle for d'utiliser, par exemple, i < 4 comme limite pour la boucle. Regardez l'indication de l'Exercice 27bis pour trouver la solution.
+			*/
+			var quatreQuestions = function() {
+				var stockage = [];
+				for (var i=0;i<4;i++) {
+					var reponse = null;
+					while (!isNaN(reponse)) {
+						reponse = prompt('Veuillez saisir la réponse ' + (i + 1));
+					}
+					stockage[i] = reponse;
+				}
+				
+				for (var i=0;stockage[i];i++) {
+					alert(stockage[i]);
+				}
+			};
+		</script>
+	</head>
+	<body onload="quatreQuestions();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

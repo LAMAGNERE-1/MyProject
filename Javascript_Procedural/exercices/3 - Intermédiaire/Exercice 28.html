@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 28</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Dans l'exercice précédent, le nombre de saisies de l'utilisateur est écrit dans le code.
+				
+				Reprenez le code de l'exercice précédent. Après chaque saisie, demandez à l'utilisateur s'il souhaite faire une nouvelle saisie.
+				Quand il répond par la négative, affichez successivement toutes ses saisies dans des B.d.D.
+				
+				Utilisez l'attribut d'évènement onload, la fonction prompt(), une boucle for, des boucles while et la fonction alert().
+			*/
+			var monTest = function(saisie) {
+				while (!saisie || (saisie == '')) {
+					saisie = prompt('Vous devez saisir du texte, merci:');
+				} return saisie;
+			}
+
+			// var monTest2 = function(saisie) {
+			// 	while (!saisie || (saisie == '')) {
+			// 		saisie = prompt('Vous devez répondre par \'oui\' ou \'non\', merci:');
+			// 	} return saisie;
+			// }
+
+			// var maFonction1 = function() {
+			// 	var resultat=[];
+			// 	resultat[0] = monTest(prompt('Veuillez saisir un texte:'));
+			// 	suite = monTest2(prompt('Voulez-vous saisir un autre texte? Répondez par \'oui\' ou \'non\': '));
+			// 	i = 1;
+			// 	while (suite == 'oui') {
+			// 		resultat[i] = monTest(prompt('Veuillez saisir un texte:'));
+			// 		suite = monTest2(prompt('Voulez-vous saisir un autre texte? Répondez par \'oui\' ou \'non\': '));
+			// 		i=i+1;
+			// 	}
+			// 	for (var i=0;typeof(resultat[i]) != 'undefined'; i++) {
+			// 		alert(resultat[i]);
+			// 	} 
+			// }
+
+			var maFonction1 = function() {
+			var resultat=[];
+			resultat[0] = monTest(prompt('Veuillez saisir un texte:'));
+			suite = confirm('Voulez-vous saisir un autre texte?');
+			i = 1;
+			while (suite) {
+				resultat[i] = monTest(prompt('Veuillez saisir un texte:'));
+				suite = confirm('Voulez-vous saisir un autre texte?');
+				i=i+1;
+			}
+			for (var i=0;typeof(resultat[i]) != 'undefined'; i++) {
+				alert(resultat[i]);
+				} 
+			}
+
+
+		</script>
+	</head>
+	<body onload="maFonction1();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

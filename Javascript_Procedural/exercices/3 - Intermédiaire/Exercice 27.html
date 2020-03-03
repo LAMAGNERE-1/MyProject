@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 27</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Reprenez le code de l'exercice précédent et utilisez une boucle pour afficher successivement les différentes valeurs du tableau.
+				
+				Utilisez l'attribut d'évènement onload, la fonction prompt(), deux boucles for, une boucle while et la fonction alert().
+				
+				Il n'est pas nécessaire pour la seconde boucle for d'utiliser, par exemple, i < 4 comme limite pour la boucle. Regardez l'indication de l'Exercice 27bis pour trouver la solution.
+			*/
+
+			var monTest = function(saisie) {
+				while (!saisie || (saisie == '')) {
+					saisie = prompt('Vous devez saisir du texte, merci:');
+				} return saisie;
+			}
+
+			var maFonction1 = function() {
+				var resultat=[];
+				for (var i=0; i<4; i++) {
+				resultat[i] = monTest(prompt('Veuillez saisir un texte:'));
+				} for (var i=0;typeof(resultat[i]) != 'undefined'; i++) {
+					alert(resultat[i]);
+				} 
+			}
+
+
+		</script>
+	</head>
+	<body onload="maFonction1();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

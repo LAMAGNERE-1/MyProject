@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 25</title>
+		<script type="text/javascript">
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Dans l'exercice précédent, deux blocs de code se ressemblent beaucoup. Ce sont les parties du programme qui permettent d'obliger l'utilisateur à saisir un nombre.
+				On pourrait donc créer une fonction qui évite d'avoir à écrire à deux reprises des instructions quasi identiques.
+				Écrivez cette fonction.
+
+				Veillez aux trois points suivants pour l'écriture de cette fonction :
+				_ La fonction ne peut pas ne se terminer tant que l'utilisateur n'a pas saisi de nombre.
+				_ La fonction prend en argument le message qui s'affichera à l'utilisateur lors de la saisie. 
+				_ La fonction retourne le nombre saisi par l'utilisateur. 
+			*/
+
+			var monTest = function(saisie) {
+				testnan = isNaN(saisie)
+				while (testnan) {
+					saisie = parseFloat(prompt('Vous n\'avez pas saisi un nombre. Merci de saisir un nombre:'));
+					testnan=isNaN(saisie);
+				} return saisie;
+			}
+
+
+			var maFonction = function() {
+				resultat1 = monTest(parseFloat(prompt('Veuillez saisir un premier nombre:')));
+				resultat2 = monTest(parseFloat(prompt('Veuillez saisir un second nombre:')));
+				alert('La somme de ' + resultat1 + ' et ' + resultat2 + ' est égale à ' + (resultat1 + resultat2) + '.');
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p onclick="maFonction();">Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

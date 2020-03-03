@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 16</title>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+				La fonction prompt() permet d'afficher une boite de dialogue à l'utilisateur avec un champ de saisie et les boutons OK et Annuler.
+				À l'égal de la fonction confirm(), prompt() retourne la saisie de l'utilisateur.
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			*********************************
+				Réalisez le programme (algorithme) suivant :
+				Quand je CLIQUE sur le premier paragraphe, j'affiche une B.d.D contenant le message « Veuillez saisir un message ». PUIS, j'affiche la saisie de l'utilisateur dans une B.d.D.
+				
+				Utilisez l'attribut d'événement onclick, la fonction prompt() et la fonction alert()
+			*/
+
+			var maBoite1 = function() {
+				resultat1 = prompt('Veuillez saisir un message.');
+				alert(resultat1);
+			}
+			
+
+			var maFonction1 = function() {
+				maBoite1();
+			}
+
+			/*
+				Quelle information nous retourne la fonction prompt si :
+				_ l'utilisateur clique sur Annuler ? alert affiche null
+				_ ne saisit rien et clique sur Ok ? alert n'affiche rien
+				_ saisit un texte et clique sur Ok ? alert affiche le texte saisi
+			*/
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p onclick="maFonction1();">Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

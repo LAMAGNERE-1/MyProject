@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>JavaScript : Exercice 37</title>
+		<script>
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+				Réalisez le programme (algorithme) suivant :
+				a) Affichez une boite de dialogue à l'utilisateur lui demande un nombre. Tant qu'il saisit un nombre, demandez-lui un autre nombre nombre. L'ensemble des réponses doit être enregistrée dans une seule variable.
+				b) Si l'utilisateur a saisi au-moins un nombre, faites la moyenne du/des nombre(s) saisi(s) en utilisant un boucle for.
+			*/
+
+			// var mesReponses = function() {
+			// 	var saisie = prompt('Veuillez saisir un nombre');
+			// 	var liste = 0;
+			// 	var i = 0;
+			// 	while (saisie && saisie != '') {
+			// 		liste = saisie + ',' + liste;
+			// 		saisie = prompt('Veuillez saisir un autre nombre');
+			// 		i++;
+			// 	} alert(liste);
+			// };
+
+			var maMoyenne = function() {
+				var saisie = prompt('Veuillez saisir un nombre:');
+				var liste = [];
+				var i = 0;
+				while (saisie && saisie != '') {
+					liste[i]=saisie;
+					saisie = prompt('Veuillez saisir un autre nombre:');
+					i++;
+				}
+				var somme = 0;
+				var moyenne;	
+				for (i=0;i<(liste.length);i++) {
+					somme = somme  + parseFloat(liste[i]);
+					moyenne = somme/(i+1);
+				}alert(moyenne);
+			} 
+
+
+			
+
+		</script>
+	</head>
+	<body onload="maMoyenne();">
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>
