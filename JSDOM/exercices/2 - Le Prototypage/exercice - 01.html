@@ -15,14 +15,35 @@
         - Sa couleur qui est un tableau : ['blanc']
       */
       
+      var concorde = {
+        model : "Y12",
+        capacity: 90,
+        price: 10,
+        passengers : [],
+        reservoir : 100,
+        color: ['white']
+      }
+
       /*
         2. Cet objet est l'avion de base tel qu'il est livré. Chaque compagnie aérienne qui achète un avion le personnalise. Utilisez l'objet fondamental Object pour créer un nouvel avion Airbus à partir du prototype. Ce nouvel avion est vendu à Air France. Vous ajouterez une propriété compagnie qui contiendra le nom de la compagnie sous la forme d'une chaîne de caractères.
       */
       
+      var Airbus = Object.create(concorde);
+        Airbus.capacity = 120;
+        Airbus.reservoir = 150;
+        
+
+      var AirbusAF = Object.create(Airbus);
+        AirbusAF.compagny = "AirFrance";
+
+
       /*
         3. Effectuez la même opération mais pour un avion destiné à British Airways.
       */
-      
+      var AirbusBA = Object.create(Airbus);
+        AirbusBA.compagny = "British Airways";
+
+
     </script>
   </head>
   <body>
