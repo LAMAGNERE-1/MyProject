@@ -13,16 +13,32 @@
         1. Crééz un nouvel objet de type Date dans la mémoire.
       */
 
-      var maDate = Date.now();
-      alert(maDate);
-
+      // var maDate = new Date('2020-01-03');
+      // // var date1 = maDate.getDate();
+      // alert(maDate.getDate()); // renvoie le N° de jour dans le mois: ici, le 3
+      // alert(maDate.getDay()); // renvoie le N° de jour dans la semaine: ici, 5 pour vendredi getFullYear()
+      // alert(maDate.getFullYear()); // renvoie l'année: ici, 2020
       /*
         2. Ci-après consultez la liste des méthodes de l'objet construit avec Date à cette adresse http://www.commentcamarche.net/contents/571-javascript-l-objet-date (en bas de page).
       */
 
       /*
         3. Utilisez l'objet créé pour afficher dans une boite de dialogue le nombre d'heures, de minutes et de secondes avant la fin du cours à (17:00:00)
-      */
+
+        */
+
+      var maDate1 = new Date();
+      alert(maDate1);
+
+      var maDate2 = new Date ("Thu, 05 Mar 2020 00:00:00 GMT+0100");
+
+      var maDate3 = maDate2 - maDate1;
+      alert("Il reste " + Math.round(maDate3/1000) + " secondes d'ici minuit.");
+      alert("Il reste " + Math.round(maDate3/(1000*60)*100)/100 + " minutes d'ici minuit.");
+      alert("Il reste " + Math.round(maDate3/(1000*60*60)*100)/100 + " heures d'ici minuit.");
+
+      alert("Il reste " + Math.round(maDate3/1000) + " secondes, c\'est à dire " + Math.round(maDate3/(1000*60)*100)/100 + " minutes, autrement dit " + Math.round(maDate3/(1000*60*60)*100)/100 + " heures d'ici minuit.")
+
     </script>
   </head>
   <body>
