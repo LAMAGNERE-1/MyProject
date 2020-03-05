@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        var prototypeDeVoiture = {
+        categorie: "voiture",
+        klaxonner: function() {
+          console.log("Tuu tuuuut");
+        },
+        rouler: function() {
+          console.log("vrouum vroouuuuum");
+        },
+        clignotant: function() {
+          console.log("clic clac clic clac");
+        },
+        voler: function() {
+          console.log("vvvvvvvvvVVVV");
+        }
+      };
+
+      // FONCTION USINE : une fonction "normale" qui renvoie un objet créé de toutes pièces (utilise le mot-clé return).
+      function usineAVoiture(marque, categorie, portes) {
+        var voiture = Object.create(prototypeDeVoiture);
+        voiture.marque = marque;
+        voiture.categorie = categorie;
+        voiture.nombreDePortes = portes;
+
+        console.log(this);
+        return voiture;
+      }
+
+      // FONCTION CONSTRUCTEUR
+      function Voiture(marque, categorie, portes) {
+        // crée un objet et le renvoie SANS MOT-CLE return.
+
+        // ATTENTION :
+        // Si la fonction est appelée sans le mot-clé "new", on peut forcer l'appel avec le mot-clé new pour éviter les erreurs.
+        //
+        if (!(this instanceof Voiture)) {
+          throw new Error("you bad programmer!");
+          // ou: return new Voiture(marque, categorie, portes);
+        }
+
+        // Dans une fonction constructeur, le mot-clé this fait référence à l'objet qui sera renvoyé par la fonction constructeur (on dit aussi "instancié")
+
+        console.log(this);
+        this.marque = marque;
+        this.categorie = categorie;
+        this.nombreDePortes = portes;
+      }
+
+
+            /*
+        IMPORTANT :
+        La propriété Voiture.prototype de la fonction constructeur Voiture se retrouve copiée dans le prototype (propriété .__proto__) de CHAQUE instance de la fonction constructeur.
+      */
+      // Voiture.prototype === monAudi.__proto__
+    //   Voiture.prototype.klaxonner = function() {
+    //     console.log("Tuu tuuuut");
+    //   };
+    //   Voiture.prototype.rouler = function() {
+    //     console.log("vrouum vroouuuuum");
+    //   };
+    //   Voiture.prototype.clignotant = function() {
+    //     console.log("clic clac clic clac");
+    //   };
+    //   Voiture.prototype.voler = function() {
+    //     console.log("vvvvvvvvvVVVV");
+    //   };
+
+      // On peut faire aussi:
+      Voiture.prototype = {
+        constructor: Voiture, // bien penser à remettre la propriété 'constructor' dans Voiture. prototype
+        categorie: "voiture",
+        klaxonner: function() {
+          console.log("Tuu tuuuut");
+        },
+        rouler: function() {
+          console.log("vrouum vroouuuuum");
+        },
+        clignotant: function() {
+          console.log("clic clac clic clac");
+        },
+        voler: function() {
+          console.log("vvvvvvvvvVVVV");
+        }
+      };
+
+
+      // le mot-clé "new" permet faire en sorte que la fonction Voiture se comporte comme une fonction constructeur
+      var monAudi = new Voiture("audi q8", "suv", 5);
+    </script>
+  </body>
+</html>

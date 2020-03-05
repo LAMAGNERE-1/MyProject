@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function Voiture(marque, categorie, portes) {
+
+
+       
+        console.log(this);
+        this.marque = marque;
+        this.categorie = categorie;
+        this.nombreDePortes = portes;
+        this.klaxonner = function() {
+        console.log("Tuu tuuuut"); 
+        }
+        Voiture.prototype.courir = function() {
+            console.log("rush");
+        }
+      
+    };
+
+
+            /*
+        IMPORTANT :
+        La propriété Voiture.prototype de la fonction constructeur Voiture se retrouve copiée dans le prototype (propriété .__proto__) de CHAQUE instance de la fonction constructeur.
+      */
+
+
+      Voiture.prototype.rouler = function() {
+        console.log("vrouum vroouuuuum");
+      };
+
+
+
+
+      // le mot-clé "new" permet faire en sorte que la fonction Voiture se comporte comme une fonction constructeur
+      var monAudi = new Voiture("audi q8", "suv", 5);
+      var maPeugeot = new Voiture("206", "citadine", 3);
+
+
+
+      // ici, la méthode rouler est partagée entre les deux instances alors que la méthode klaxonner ne l'est pas.
+
+      Voiture.klaxonner = function() {
+        console.log("Tii"); 
+      }
+
+      Voiture.prototype.rouler = function() {
+        console.log("vrim");
+      };
+
+
+      Voiture.freiner = function() {
+          console.log("Je freine");
+      }
+
+      Voiture.prototype.acceler = function() {
+          console.log("J'accélère");
+      }
+
+
+      function toto() {
+          console.log("tut tut");
+      };
+
+      var maFonction = function() {
+        console.log("pat");
+      };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
