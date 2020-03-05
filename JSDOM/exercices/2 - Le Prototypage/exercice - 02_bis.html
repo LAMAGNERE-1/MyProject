@@ -30,6 +30,7 @@
         }
       } 
 
+   
 
       /*
         2. Les éléphants contemporains héritent probablement des caractéristiques d'un mammouth qui est leur prototype. Écrivez une fonction constructeur qui permet de construire des objets représentant des éléphants. Les éléphants ont deux caractéristiques qui différent des mammouths :
@@ -40,19 +41,20 @@
       */
       
       function protoElephant() {}
-
-      protoElephant.prototype = new protoMammouth();
       
+      protoElephant.prototype = new protoMammouth();
+
       function protoElephant() {
         this.weight = 1.5;
         this.specie = 'titi';
         this.fur = false;
-        this.eat = function() {
-          alert("Manger des cacahouètes");
-        }
       }
 
-      
+      // j'ajoute la méthode au prototype afin qu'elle soit partagée par les objets instanciés à partir du constructeur:
+      // on pourra vérifier que elephant1.eat === elephant2.eat est true (alors qu'il est false si on met la méthode dès la définition du constructeur)
+      protoElephant.prototype.eat = function() {
+          alert("Manger des cacahouètes");
+      }
 
       /*
         3. Créez 2 éléphants. Vous devez pouvoir exécuter la méthode qui leur permet de barrir et qui provient de leur prototype et, exécuter la méthode qui leur permet de manger des cacahuètes et qui leur est propre.
