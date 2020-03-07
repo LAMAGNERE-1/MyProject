@@ -14,23 +14,34 @@
       /*
       1. La propriété body du sous objet document de l'objet window contient l'objet correspondant à la balise body du document Web affiché. Affichez le contenu de la propriété body à l'aide de la méthode .log() du sous objet console.
       */
-      
+        
+      window.console.log(window.document.body);
+
       /*
       2. Vous avez pu constater que cette propriété contient null. En effet, lorsque votre script est exécuté, le navigateur n'A PAS ENCORE LU ET CHARGE la suite du document. A partir de maintenant vous avez 2 possibilités :
         - Soit vous programmez dans une balise script que vous positionnerez juste avant la balise body fermante
         - Soit vous créez une fonction dans laquelle vous programmerez et vous exécuterez cette fonction AU CHARGEMENT du document à l'aide de l'attribut d'évènement onload sur la balise body.
       */
       
+      function displayBody() {
+        console.log(window.document.body);
+      }
+
       /*
       3. Affichez à nouveau la propriété body à l'aide de la méthode .log() du sous objet console en respectant les consignes proposées précédemment.
       */
       
+
+
       /*
       4. La propriété body contient donc un objet de type HTMLBodyElement. Affectez la chaîne de caractère 'lime' à la propriété bgColor de l'objet référencé dans la propriété body.
       */
+
+      
+
     </script>
   </head>
-  <body>
+  <body onload="displayBody();">
     <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>
@@ -52,5 +63,9 @@
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
     </div>
+    <script>
+      window.console.dir(window.document.body);
+      window.document.body.bgColor = 'lime';
+    </script>
   </body>
 </html>

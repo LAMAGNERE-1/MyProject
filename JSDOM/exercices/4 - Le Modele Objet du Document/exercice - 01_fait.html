@@ -2,23 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 2</title>
+    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 1</title>
     <script>
       //Énoncé :
       /*
         En JavaScript, on a accès à des objets qui contiennent les informations relatives au navigateurs Internet : le DOM. L'objet qui permet d'accéder au DOM est l'objet window. Cet objet est l'objet de plus haut niveau en JavaScript. L'objet window contient des sous objets que nous allons exploiter.
         
-        Un des sous objets de l'objet window est l'objet navigator. On peut donc écrire window.navigator pour accéder à cet objet. Il contient un ensemble d'informations concernant le navigateur Internet qui exécute le programme. Ce sous objet est documenté ici dans le MDN : https://developer.mozilla.org/fr/docs/Web/API/Window/navigator
-      */
-
-      /*
-      1. Affichez dans une boite de dialogue le contenu de la propriété appName de l'objet dans window.navigator. Puis affichez le contenu de la propriété userAgent dans une boite de dialogue.
-
-      Qu'est-ce qui s'affiche sur IE, Mozilla, Chrome ?
+        Un des sous objets de l'objet window est l'objet console. On peut donc écrire window.console pour accéder à cet objet. Ce sous objet est documenté ici dans le MDN : https://developer.mozilla.org/en-US/docs/Web/API/Console
       */
       
       /*
-      2. Utilisez ces propriétés pour réaliser l'algorithme suivant : SI je démarre mon script sur IE, j'affiche une boite de dialogue avec le texte 'So Lame !' à l'intérieur et j'ouvre une PoPUp vers le site de Mozilla Firefox, SINON SI je démarre mon script sur Chrome j'affiche une boite de dialogue avec le texte 'Spy On Me !' et j'ouvre une PoPUp vers la page wikipédia de http://fr.wikipedia.org/wiki/Chromium_%28navigateur_web%29 SINON j'affiche une boite de dialogue avec le texte 'Freed from Desire'.
+      1. Utilisez la méthode .log() de l'objet console pour afficher un texte dans la console de debug du navigateur Internet.
+      */
+      window.console.log("Toto est ici!")
+
+      /*
+      2. Accédez à la page d'accueil des technologies Web sur le MDN (https://developer.mozilla.org/fr/docs/Web/Reference) et regardez le contenu de la console de votre debugger.       
+      */
+      for (var i=0; i<5; i++) {
+        console.log("Hello, %s. You've called me %d times.", "Bob", i+1);
+      }
+
+      /*
+      3. Accédez à la page d'accueil de facebook et regardez le contenu de la console de votre debugger.       
+      */
+      
+      /*
+      4. Vous savez maintenant comment sont affichés les messages que vous avez pu voir apparaître dans la console. On utilise la méthode .log() de l'objet console pour debugger un programme de façon non intrusive (sans bloquer le programme comme avec la méthode .alert()). Vous pouvez afficher le contenu de variables par exemple.
       */
     </script>
   </head>
