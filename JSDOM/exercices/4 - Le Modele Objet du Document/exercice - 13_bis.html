@@ -12,10 +12,40 @@
       /*
         1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier l'opacité du titre.
       */
+
+
+      function changeOpacity() {
+      let elem = {
+          property : document.getElementById('title').style,
+      }
+
+      elem.property.color = "red";
+
+    //   console.log(elem.property.opacity);
+
+      if(elem.property.opacity == "1") {
+        clearInterval(valeur);
+      }
+      else {
+        if(!(elem.property.opacity)) {
+            elem.property.opacity = "0.01";
+        } else {
+            let opacityValue = parseFloat(elem.property.opacity);
+            opacityValue += 0.01;
+            elem.property.opacity = opacityValue;
+        }
+      }
+      }
+         
+     
+    const valeur = setInterval(changeOpacity,100);
+
+
+
     </script>
   </head>
-  <body>
-    <h1>Titre principal</h1>
+  <body onload="changeOpacity();">
+    <h1 id="title">Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
@@ -38,5 +68,5 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
     </div>
-  </body>
+    </body>
 </html>

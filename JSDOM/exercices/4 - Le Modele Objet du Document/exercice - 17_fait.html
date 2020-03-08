@@ -16,10 +16,18 @@
       /*
         1. AU CLIC sur le titre principal, utilisez la méthode .createElement() pour créer un objet correspondant à une balise image. Renseignez les propriétés title, alt et src de cet objet. Utilisez appendChild pour ajouter cette balise image dans le <span> 2.2
       */
+
+      function newElementImg() {
+        var image = document.createElement('img');
+        image.src = "planete.jpeg";
+        image.alt = "planete";
+        image.title = "planete";
+        document.getElementById('span2').appendChild(image);
+      }
     </script>
   </head>
   <body>
-    <h1>Titre principal</h1>
+    <h1 onclick="newElementImg();">Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
@@ -34,7 +42,7 @@
       <div>
         <h2><span>2</span>. Titre de la deuxième section</h2>
         <p><span>2.1</span>. Premier paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
-        <p><span>2.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
+        <p><span id="span2">2.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
       </div>
       <div>
         <h2><span>3</span>. Titre de la troisième section</h2>
