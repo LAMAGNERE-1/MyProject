@@ -15,12 +15,11 @@
         1. Écrivez le programme suivant : AU CLIC sur le premier <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la première section. AU CLIC sur le deuxième <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la deuxième section. AU CLIC sur le troisième <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la troisième section.
       */
 
-      function changeSpan(indice) {
+      function changeSpan(index) {
         let elem = document.getElementsByClassName('span');
-        elem[indice].style.color = "red";
-        elem[indice].style.fontWeight = "bold";
-        elem[indice].style.fontSize = "xxlarge";
-        // console.log(elem[indice].style);
+        elem[index].style.color = "red";
+        elem[index].style.fontWeight = "bold";
+        elem[index].style.fontSize = "xxlarge";
       }
 
       
