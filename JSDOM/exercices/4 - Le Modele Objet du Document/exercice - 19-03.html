@@ -20,7 +20,13 @@
       /*
         2. Écrivez l'algorithme suivant : AU CLIC sur le titre de la première section, on affecte la valeur 'Ceci est un nouveau titre' à la propriété title du sous objet document de l'objet window.
       */
+        // var element = document.getElementById('newtitles1');
+
       
+      
+        
+        
+
       function newTitleS1() {
         window.document.title = 'Ceci est un nouveau titre';
       }
@@ -47,12 +53,12 @@
       <li>Troisième point</li>
     </ul>
     <div>
-      <h2 onclick="newTitleS1();"><span>1</span>. Titre de la première section</h2>
+      <h2 id="newtitles1"><span>1</span>. Titre de la première section</h2>
       <p><span>1.1</span>. Premier paragraphe de la première section.</p>
       <p><span>1.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
     <div>
-      <h2 onclick="newTitleS2();"><span>2</span>. Titre de la deuxième section</h2>
+      <h2 id="newTitleS2"><span>2</span>. Titre de la deuxième section</h2>
       <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
       <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
@@ -61,5 +67,9 @@
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
     </div>
+    <script>
+        document.getElementById('newtitles1').addEventListener("click",newTitleS1);
+        document.getElementById('newTitleS2').addEventListener("click",newTitleS2);
+    </script>
   </body>
 </html>

@@ -53,7 +53,7 @@
         POUR CHAQUE robot dans le magasin, AFFECTEZ un nom d'usage qui sera la concaténation du modèle, du numéro de série et de l'index du robot dans le magasin.
       */
     
-      for (var i=0; monMagasin[i]; i++) {
+      for (var i=0; monMagasin[i].modelName; i++) {
       monMagasin[i].usageName = monMagasin[i].modelName + "-" + monMagasin[i].serialNumber + "-" + i;
       };
       
