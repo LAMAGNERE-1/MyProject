@@ -46,7 +46,7 @@
     <div>
       <div>
         <h2><span>1</span>. Titre de la première section</h2>
-        <canvas width="400px" height="350px" id="mycanvas"></canvas>
+        <canvas width="800px" height="350px" id="mycanvas"></canvas>
         <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
         <p><span>1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
       </div>
@@ -80,15 +80,17 @@
             interval = setInterval(monDessin,20); 
           }
           // console.log(largeur);
-          if (largeur < 150) {
-          ctx.clearRect(0,0,400,400);
+          if (longueur < 220) {
+          ctx.clearRect(0,0,800,400);
           ctx.lineWidth = 7; // Set line width for a filled square
           ctx.strokeStyle = 'yellow'; // Set line color for unfilled square
           ctx.fillStyle = "rgb(200,0,0)";
+          let j = 1;
           largeur += 2;
           longueur += 2;
-          coordX += 2;
+          coordX += j;
           coordY += 1;
+          j += 4;
           ctx.strokeRect(coordX, coordY, largeur, longueur); // Set an unfilled square
           ctx.fillRect(coordX, coordY, largeur, longueur); // Set a filled square
           } else {
