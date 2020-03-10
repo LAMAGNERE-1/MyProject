@@ -14,13 +14,30 @@
       1. Créez un objet en JSON qui contient 3 méthodes.
       */
 
+      var monObjet = {
+        ajouter : function() {
+          console.log(2+5);
+        },
+        soustraire : function() {
+          console.log(2-5);
+        },
+        multiplier : function() {
+          console.log(2*5);
+          console.log(this);
+        },
+      }
       /*
       2. Comment obtient-on, dans une méthode, une référence à l'objet contenant la méthode ? Retournez cette référence à partir de chacune des méthodes. 
       */
-      
+       
+       monObjet.ajouter();
+       monObjet.multiplier();
+
+
       /*
       3. Exécutez les 3 méthodes sur UNE SEULE ligne.
       */
+      monObjet.$ajouter().$soustraire().$multiplier();
 
       /*
       4. Créez une fonction usine qui retourne l'objet.
