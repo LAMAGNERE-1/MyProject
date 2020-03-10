@@ -14,31 +14,25 @@
       */
 
 
+
       function changeOpacity() {
-      let elem = {
-          property : document.getElementById('title').style,
-      }
+      let elem = document.getElementById('title').style;
+      elem.color = "red";
 
-      elem.property.color = "red";
-
-    //   console.log(elem.property.opacity);
-
-      if(elem.property.opacity == "1") {
+      if(elem.opacity == "1") {
         clearInterval(valeur);
-      }
-      else {
-        if(!(elem.property.opacity)) {
-            elem.property.opacity = "0.01";
+      } else {
+        if(!(elem.opacity)) {
+            elem.opacity = "0.01";
         } else {
-            let opacityValue = parseFloat(elem.property.opacity);
+            let opacityValue = parseFloat(elem.opacity);
             opacityValue += 0.01;
-            elem.property.opacity = opacityValue;
+            elem.opacity = opacityValue;
         }
       }
-      }
-         
+      }   
      
-    const valeur = setInterval(changeOpacity,100);
+      const valeur = setInterval(changeOpacity,100);
 
 
 

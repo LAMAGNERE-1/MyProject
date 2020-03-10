@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 20</title>
+    <script>
+      //Énoncé :
+
+      /*L'Ascenseur*/
+
+      /*
+        L'objectif de cet exercice est de créer une div qui bouge en fonction du scroll de la souris. Vous devez impérativement réaliser l'exercice sur FireFox pour commencer.
+      */
+ 
+      /*
+        1. Créez une <div> qui aura pour identifiant ascenseur. Doter cette <div> de styles CSS de telle sorte qu'elle soit visible par l'utilisateur (carré rouge par exemple). Cette <div> doit être positionnée en absolute.
+      */
+ 
+      /*
+        Lorsqu'on confie une fonction au gestionnaire d'évènement du navigateur Internet, celui-ci l'exécute toujours en lui transmettant en paramètre un objet contenant les caractéristiques de l'évènement survenu. C'est pourquoi on peut écrire :
+      */
+
+      window.onload = function(unObjetFourni){
+        unObjetFourni; //ceci est la variable contenant l'objet fourni par le gestionnaire d'évènement à la fonction déclenchée par le navigateur lorsqu'il a fini de charger le document en mémoire.
+      };
+      /*ou bien encore (et de préférence)*/
+      window.addEventListener('load',function(unObjetFourni){
+        unObjetFourni;
+      }, false);
+
+      /*
+        2. Au Chargement du document, attachez une fonction à l'évènement DOMMouseScroll en utilisant la méthode .addEventListener(). Cette fonction doit déclencher l'affichage d'une boite de dialogue avec le texte : 'This is a magic scroll'.
+      */
+
+      /*
+        3. Modifiez cette fonction pour afficher dans une boite de dialogue la propriété .detail contenue dans l'objet d'évènement fourni à chaque fois qu'on scroll. Cette propriété contient le décalage de la molette.
+      */
+
+      /*
+        4. Modifiez cette fonction pour que la <div> se décale en fonction de la valeur de la propriété .detail 
+      */
+
+      //Compatibilité Inter Navigateur
+      /*
+        - L'évènement concernant le scroll de souris s'appelle 'DOMMouseScroll' sur FF.
+        - L'évènement concernant le scroll de souris s'appelle 'mousewheel' sur IE9, Chrome, Safari, Opera.
+        - La méthode .addEventListener() n'existe pas sur IE 6/7/8 et l'évènement concernant le scroll de souris s'appelle 'onmousewheel' sur ces navigateurs.
+
+        - L'information concernant le décalage de la molette qu'on trouve dans l'objet fourni par le gestionnaire d'évènement sur IE s'appelle .wheelDelta (la propriété .detail n'existe pas)
+
+        5. Tenez compte des informations précédentes pour modifier votre script de telle sorte qu'il fonctionne sur IE 8,9,10; FF, Chrome, ...
+
+        Astuce : vous pouvez tester l'existence d'une propriété effectuant une comparaison avec undefined.
+      */
+    </script>
+  </head>
+  <body onload="Init ();">
+    Use the mouse wheel on the field below.
+    <div id="myDiv" style="width:200px; height:200px; overflow:auto;">
+        <div style="height:2000px; background-color:#a08080;"></div>
+    </div>
+    <br />
+    The last roll amount: <span id="info" style="background-color:#e0e0d0;"></span>
+    <script>
+              function MouseScroll (event) {
+            var rolled = 0;
+            if ('wheelDelta' in event) {
+                rolled = event.wheelDelta;
+            }
+            else {  // Firefox
+                    // The measurement units of the detail and wheelDelta properties are different.
+                rolled = -40 * event.detail;
+            }
+            
+            var info = document.getElementById ("info");
+            info.innerHTML = rolled;
+        }
+
+        function Init () {
+                // for mouse scrolling in Firefox
+            var elem = document.getElementById ("myDiv");
+            if (elem.addEventListener) {    // all browsers except IE before version 9
+                    // Internet Explorer, Opera, Google Chrome and Safari
+                elem.addEventListener ("mousewheel", MouseScroll, false);
+                    // Firefox
+                elem.addEventListener ("DOMMouseScroll", MouseScroll, false);
+            }
+            else {
+                if (elem.attachEvent) { // IE before version 9
+                    elem.attachEvent ("onmousewheel", MouseScroll);
+                }
+            }
+        }      
+    </script>
+  </body>
+</html>
