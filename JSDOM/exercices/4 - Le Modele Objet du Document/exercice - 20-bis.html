@@ -54,50 +54,43 @@
       */
     </script>
   </head>
-  <body>
-    <h1>Titre principal</h1>
-    <ul>
-      <li>Premier point</li>
-      <li>Deuxième point</li>
-      <li>Troisième point</li>
-    </ul>
-    <div>
-      <div>
-        <h2><span>1</span>. Titre de la première section</h2>
-        <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
-        <p><span>1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
-      </div>
-      <div id="ascenseur">
-        <h2><span>2</span>. Titre de la deuxième section</h2>
-        <p><span>2.1</span>. Premier paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
-        <p><span>2.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
-      </div>
-      <div>
-        <h2><span>3</span>. Titre de la troisième section</h2>
-        <p><span>3.1</span>. Premier paragraphe de la troisième section et un <a href="#">lien</a>.</p>
-        <p><span>3.2</span>. Deuxième paragraphe de la troisième section et un <a href="#">lien</a>.</p>
-      </div>
+  <body onload="Init ();">
+    Use the mouse wheel on the field below.
+    <div id="myDiv" style="width:200px; height:200px; overflow:auto;">
+        <div style="height:2000px; background-color:#a08080;"></div>
     </div>
+    <br />
+    The last roll amount: <span id="info" style="background-color:#e0e0d0;"></span>
     <script>
-      
-      
-      // window.addEventListener('load', function(){window.addEventListener('DOMMouseScroll',function(){alert('This is a magic scroll');},false)},false);
+              function MouseScroll (event) {
+            var rolled = 0;
+            if ('wheelDelta' in event) {
+                rolled = event.wheelDelta;
+            }
+            else {  // Firefox
+                    // The measurement units of the detail and wheelDelta properties are different.
+                rolled = -40 * event.detail;
+            }
+            
+            var info = document.getElementById ("info");
+            info.innerHTML = rolled;
+        }
 
-      
-      window.addEventListener('load', function(){window.addEventListener('DOMMouseScroll',()=>{track(event)},false)},false);
-
-      function track(event) {
-        var elem = 40 * (event.detail);
-        // alert(elem);
-        var element =  document.getElementById('ascenseur');
-        element.style.backgroundColor = 'red';
-        element.style.position = 'absolute';
-        element.style.top = elem + "px";
-        element.style.left = elem + "px";
-      }
-
-      
-      
+        function Init () {
+                // for mouse scrolling in Firefox
+            var elem = document.getElementById ("myDiv");
+            if (elem.addEventListener) {    // all browsers except IE before version 9
+                    // Internet Explorer, Opera, Google Chrome and Safari
+                elem.addEventListener ("mousewheel", MouseScroll, false);
+                    // Firefox
+                elem.addEventListener ("DOMMouseScroll", MouseScroll, false);
+            }
+            else {
+                if (elem.attachEvent) { // IE before version 9
+                    elem.attachEvent ("onmousewheel", MouseScroll);
+                }
+            }
+        }      
     </script>
   </body>
 </html>
