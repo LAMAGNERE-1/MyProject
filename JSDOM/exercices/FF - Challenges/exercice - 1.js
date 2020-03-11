@@ -1,27 +1,27 @@
 /*
-	L'objectif est d'écrire un algorithme génétique.
+	L'objectif est d'Ã©crire un algorithme gÃ©nÃ©tique.
 	Il s'agit de reproduire le comportement d'un banc
-	de poissons qui nagent dans des directions aléatoires
+	de poissons qui nagent dans des directions alÃ©atoires
 	dans un aquarium.
 	
-	L'animation devra être produite dans une balise canvas.
-	Les poissons devront faire l'objet d'une représentation
-	visuelle (par forcément réaliste !).
+	L'animation devra Ãªtre produite dans une balise canvas.
+	Les poissons devront faire l'objet d'une reprÃ©sentation
+	visuelle (par forcÃ©ment rÃ©aliste !).
 	
-	Le programme doit respecter les régles suivantes :
-	- Un aquarium contient un nombre aléatoire de poissons (un aquarium
+	Le programme doit respecter les rÃ¨gles suivantes :
+	- Un aquarium contient un nombre alÃ©atoire de poissons (un aquarium
 	  est un tableau d'objet de type poisson);
-	- Chaque poisson se déplace dans une direction aléatoire (les 
-	  poisson on un "vecteur de déplacement" aléatoire);
-	- Si un poisson est à une certaine distance d'un autre poisson
-	  il doit se mettre à se déplacer dans la même direction (un poisson
+	- Chaque poisson se dÃ©place dans une direction alÃ©atoire (les 
+	  poisson on un "vecteur de dÃ©placement" alÃ©atoire);
+	- Si un poisson est Ã  une certaine distance d'un autre poisson
+	  il doit se mettre Ã  se dÃ©placer dans la mÃªme direction (un poisson
 	  a un "champ de vision");
 	- Si un poisson atteint les limites de l'aquarium, il doit changer
-	  de direction pour une nouvelle direction aléatoire (un poisson
+	  de direction pour une nouvelle direction alÃ©atoire (un poisson
 	  ne peut pas sortir de l'aquarium);
 	- Le pointeur de la souris de l'utilisateur peut survoler l'aquarium.
-	  Si le pointeur de la souris se situe à un certaine distance d'un
-	  poisson, celui-ci doit changer de direction pour une direction aléatoire
-	  opposée à la position du pointeur de la souris (un poisson "à peur" de
+	  Si le pointeur de la souris se situe Ã  une certaine distance d'un
+	  poisson, celui-ci doit changer de direction pour une direction alï¿½atoire
+	  opposÃ©e Ã  la position du pointeur de la souris (un poisson "a peur" de
 	  la souris).
 */

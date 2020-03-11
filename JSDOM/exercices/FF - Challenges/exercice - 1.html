@@ -1,0 +1,100 @@
+<!-- 
+	L'objectif est d'écrire un algorithme génétique.
+	Il s'agit de reproduire le comportement d'un banc
+	de poissons qui nagent dans des directions aléatoires
+	dans un aquarium.
+	
+	L'animation devra être produite dans une balise canvas.
+	Les poissons devront faire l'objet d'une représentation
+	visuelle (par forcément réaliste !).
+	
+	Le programme doit respecter les règles suivantes :
+	- Un aquarium contient un nombre aléatoire de poissons (un aquarium
+	  est un tableau d'objet de type poisson);
+	- Chaque poisson se déplace dans une direction aléatoire (les 
+	  poisson on un "vecteur de déplacement" aléatoire);
+	- Si un poisson est à une certaine distance d'un autre poisson
+	  il doit se mettre à se déplacer dans la même direction (un poisson
+	  a un "champ de vision");
+	- Si un poisson atteint les limites de l'aquarium, il doit changer
+	  de direction pour une nouvelle direction aléatoire (un poisson
+	  ne peut pas sortir de l'aquarium);
+	- Le pointeur de la souris de l'utilisateur peut survoler l'aquarium.
+	  Si le pointeur de la souris se situe à une certaine distance d'un
+	  poisson, celui-ci doit changer de direction pour une direction al�atoire
+	  opposée à la position du pointeur de la souris (un poisson "a peur" de
+	  la souris). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les poissons</title>
+</head>
+<body>
+    <p id="aquarium">Dessiner un aquarium</p>
+          <canvas width="1000px" height="500px" id="mycanvas"></canvas>
+    <script>
+
+    const myCanvas = document.getElementById('mycanvas');
+    // let coordX = 30;
+    // let coordY = 100;
+
+    function monBocal() {
+        const bocal = myCanvas.getContext('2d');  
+        bocal.lineWidth = "7px";
+        bocal.strokeStyle = "red";
+        bocal.beginPath();
+        bocal.moveTo(10, 50);
+        bocal.lineTo(10, 440);
+        bocal.lineTo(980, 440); 
+        bocal.lineTo(980,50);
+        bocal.stroke();
+        bocal.closePath();
+    }
+
+    function monEau() {
+        const eau = myCanvas.getContext('2d');
+        eau.strokeStyle = "blue";
+        eau.beginPath();
+        eau.moveTo(10,70);
+        eau.lineTo(980,70);
+        eau.stroke();
+        eau.closePath();
+    }
+
+    // const poisson = myCanvas.getContext('2d');
+
+    function ProtoPoissons(coordX,coordY,color) {
+            this._poisson = myCanvas.getContext('2d');
+            this._poisson.strokeStyle = color;
+            this._poisson.strokeRect(coordX, coordY, 15, 30);
+    }
+
+
+    document.getElementById('aquarium').addEventListener('click',monAquarium);
+
+    function monAquarium() {
+        monBocal();
+        monEau();
+        // mesPoissons(30,100);
+        // const poisson = myCanvas.getContext('2d');
+    
+        // function ProtoPoissons(arg1,arg2,arg3) {
+        //     this._poisson = myCanvas.getContext('2d');
+        //     this._poisson.strokeStyle = 'arg3';
+        //     this._poisson.strokeRect(arg1, arg2, 15, 30);
+        // }
+        // var poisson1 = new ProtoPoissons(30,100,"orange");
+        // var poisson2 = new ProtoPoissons(50,150,"green");
+
+        for (var i = 0; i=2;i++) {
+        var arg    
+        var poisson[i] = new ProtoPoissons(30,100,"orange");
+        }
+    }
+
+
+    </script>
+</body>
+</html>
