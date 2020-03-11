@@ -56,10 +56,10 @@
             sol.fillRect(0,300,1000,200);
           }
 
-          function mesEtoiles(arg1, arg2, arg3) {
+          function mesEtoiles(arg) {
             const star = myCanvas.getContext('2d');
-            star.fillStyle = "rgba(255,255,255," + arg3 + ")";
-            star.fillRect(arg1,arg2,4,4);
+            star.fillStyle = "rgba(255,255,255," + arg + ")";
+            star.fillRect(20,200,10,10);
           }
           // Paysage
       
@@ -73,11 +73,7 @@
               monSoleil(lumSoleil)
               monCiel(lumCiel);
               mesEtoiles(lumStar); 
-              monSol();
-            //   for (var i =0;i < 5; i++) {
-            //     mesEtoiles(10+i+100*(Math.random()),(200+i-100*Math.random()), lumStar);   
-            //   }
-              mesEtoiles(10,200,lumStar);  
+              monSol(); 
               coordX += 1.5;
               coordY -= 1;
               if (lumSoleil<=1) {
@@ -96,7 +92,7 @@
                   ctx.clearRect(0,0,1000,500);
                   monSoleil(lumSoleil)
                   monCiel(lumCiel);
-                  mesEtoiles(10,200,lumStar); ;   
+                  mesEtoiles(lumStar);   
                   monSol();
                   coordX += 1.5;
                   coordY += 1;
