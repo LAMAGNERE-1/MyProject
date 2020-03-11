@@ -1,0 +1,138 @@
+
+	<!-- L'objectif de cet exercice est de cr�er une
+	animation dans un balise canvas. Il s'agit
+	d'animer un lever - couch� de soleil sur une
+	plaine.
+
+	- Cr��z une balise canvas;
+	- Cr�ez un dessin qui repr�sente le ciel;
+	- Cr�er un dessin qui repr�sente le soleil;
+	- Cr�ez un dessin qui repr�sente votre plaine;
+	- Le soleil doit d�crire un arc de cercle au dessus de la plaine;
+	- La luminosit� ambiante doit varier en fonction de la hauteur
+	  du soleil dans l'espace de dessin. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="debut">Le soleil traverse le ciel</p>
+    <p id="cercle">Dessiner un cercle</p>
+    <canvas width="500px" height="500px" id="mycanvas"></canvas>
+    <script>
+
+    const myCanvas = document.getElementById('mycanvas');
+    const ctx = myCanvas.getContext('2d');
+    let coordX = 30;
+    let coordY = 150;
+    let down = 0;
+    
+    // const ciel = myCanvas.getContext('2d');
+    // ciel.fillStyle = "rgb(0,0,80)";
+    // ciel.fillRect(0,0,500,500);
+
+
+    // Le soleil traverse le ciel
+
+    document.getElementById('debut').addEventListener('click',monSoleil);
+
+    function monSoleil() {
+    
+    if(coordX < 250) {   
+        if(coordY > 10 && down == 0) {
+        ctx.clearRect(0,0,500,500); 
+        const ciel = myCanvas.getContext('2d');
+        ciel.fillStyle = "rgb(0,0,150)";
+        ciel.fillRect(0,0,500,500);
+        ciel.globalAlpha = 0.2;   
+        ctx.strokeRect(coordX, coordY, 50,50);
+        coordX += 1;
+        coordY -= 1;
+        console.log(coordY);
+        requestAnimationFrame(monSoleil);
+        } else {
+            ctx.clearRect(0,0,500,500);
+            const ciel = myCanvas.getContext('2d');
+            ciel.fillStyle = "rgb(0,0,150)";
+            ciel.fillRect(0,0,500,500); 
+            ciel.globalAlpha = 0.2;    
+            ctx.strokeRect(coordX, coordY, 50,50);
+            coordX += 1;
+            coordY += 1;
+            down = 1;
+            requestAnimationFrame(monSoleil);
+        } 
+    } else {
+        ctx.clearRect(0,0,500,500);
+        const ciel = myCanvas.getContext('2d');
+        ciel.fillStyle = "rgb(0,0,150)";
+        ciel.fillRect(0,0,500,500); 
+        ciel.globalAlpha = 0.2; 
+        coordX = 10;
+        coordY = 150;
+        down = 0;
+    }
+    }
+
+    // Dessiner un cercle
+
+    document.getElementById('cercle').addEventListener('click',monCercle);
+
+    function monCercle() {
+        // ctx.beginPath();
+        // ctx.arc(coordX, coordY, 29, 0, 2*Math.PI, false);
+        // ctx.fillStyle = "red"; 
+        // ctx.fill();
+       
+        if(coordX < 250) {   
+        if(coordY > 29 && down == 0) {
+        ctx.clearRect(0,0,500,500);
+        const ciel = myCanvas.getContext('2d');
+        ciel.fillStyle = "rgb(0,0,150)";
+        ciel.fillRect(0,0,500,500);
+        ciel.globalAlpha = 0.2;   
+        ctx.beginPath();
+        ctx.arc(coordX, coordY, 29, 0, 2*Math.PI, false);
+        ctx.fillStyle = "red"; 
+        ctx.fill();
+        coordX += 1;
+        coordY -= 1;
+        // console.log(coordY);
+        requestAnimationFrame(monCercle);
+        } else {
+            ctx.clearRect(0,0,500,500);
+            const ciel = myCanvas.getContext('2d');
+            ciel.fillStyle = "rgb(0,0,150)";
+            ciel.fillRect(0,0,500,500);
+            ciel.globalAlpha = 0.2;   
+            ctx.beginPath();
+            ctx.arc(coordX, coordY, 29, 0, 2*Math.PI, false);
+            ctx.fillStyle = "red"; 
+            ctx.fill();
+            coordX += 1;
+            coordY += 1;
+            down = 1;
+            requestAnimationFrame(monCercle);
+        } 
+    } else {
+        ctx.clearRect(0,0,500,500);
+        const ciel = myCanvas.getContext('2d');
+        ciel.fillStyle = "rgb(0,0,150)";
+        ciel.fillRect(0,0,500,500);
+        ciel.globalAlpha = 0.2;   
+        coordX = 10;
+        coordY = 150;
+        down = 0;
+    }
+    }
+
+
+
+    </script>
+</body>
+</html>
