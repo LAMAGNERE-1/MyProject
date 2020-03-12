@@ -40,7 +40,7 @@
       
           var myCanvas = document.getElementById('mycanvas');
 
-        //   var ctx = myCanvas.getContext('2d');  
+          var ctx = myCanvas.getContext('2d');  
 
           function creerBocal() {
             const bocal = myCanvas.getContext('2d');  
@@ -75,13 +75,13 @@
           }
       
           var poisson = [];
-          var X = 10 + 955*Math.random();
-          var Y = 120 + 270*Math.random();  
+          var coordX;
+          var coordY;   
           function creerPoissons() {
               for (var i = 0; i<3;i++) {
                 var color = "blue";
-                coordX = X;
-                coordY = Y;    
+                coordX = 10 + 955*Math.random();
+                coordY = 120 + 270*Math.random();    
                 poisson[i] = new ProtoPoissons(coordX,coordY,color);
               }
           }
@@ -105,20 +105,19 @@
             creerEau();
             creerPoissons();
             a = 1;
+            console.log(poisson[0].coordX);
             } else {
             ctx.clearRect(0,0,1000,500);
+            creerBocal();
+            creerEau();
+            console.log(poisson[0].coordX);
             for (var j = 0; j < 3; j++){
-            X = poisson[j].coordX;
-            Y = poisson[j].coordY;
-            function creerPoissons() {
-              for (var i = 0; i<3;i++) {
-                var color = "blue";
-                coordX = X;
-                coordY = Y;    
-                poisson[i] = new ProtoPoissons(coordX,coordY,color);
+            coordX = poisson[j].coordX + 1*Math.random();
+            coordY = poisson[j].coordY + 1*Math.random();
+            color = "blue";
+            poisson[j] = new ProtoPoissons(coordX,coordY,color);
               }
-          }
-            }
+              console.log(poisson[0].coordX); 
             }    
             requestAnimationFrame(creerAquarium);
 

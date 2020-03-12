@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+
+console.log(poisson[0].coordY);
+// console.log(b);
+for (var j = 0; j < 1; j++){
+    if (((poisson[j].coordX + 15 >= 980) ||  (poisson[j].coordY + 30 >= 440)) && b == 1) {
+        b = -1;
+    } else if (((poisson[j].coordX + 15 < 980) ||  (poisson[j].coordY + 30 < 440)) && b == 1) {
+        b = 1;
+    } else if ((( poisson[j].coordX - 1 <= 10) || (poisson[j].coordY - 1 <= 70)) && b == -1) {
+        b = 1;
+    } else if ((( poisson[j].coordX - 1 > 10) || (poisson[j].coordY - 1 > 70)) && b == -1) {
+        b = -1;
+    }
+    console.log(b);
+    if (b == -1) {
+        coordX = poisson[j].coordX - 1*Math.random();
+        coordY = poisson[j].coordY - 1*Math.random();
+    } else {
+        coordX = poisson[j].coordX + 1*Math.random();
+        coordY = poisson[j].coordY + 1*Math.random();
+    }
+    
+color = "blue";
+poisson[j] = new ProtoPoissons(coordX,coordY,color);
+  }
+    </script>
+</body>
+</html>
+
+
+console.log(poisson[0].coordY);
+// console.log(b);
+for (var j = 0; j < 1; j++){
+    if (((poisson[j].coordX + 15 >= 980) ||  (poisson[j].coordY + 30 >= 440)) && b == 1) {
+        b = -1;
+    } else {
+        if (((poisson[j].coordX + 15 < 980) ||  (poisson[j].coordY + 30 < 440)) && b == 1) {
+        b = 1;
+    } else {
+        if ((( poisson[j].coordX - 1 <= 10) || (poisson[j].coordY - 1 <= 70)) && b == -1) {
+        b = 1;
+    } else {
+        if ((( poisson[j].coordX - 1 > 10) || (poisson[j].coordY - 1 > 70)) && b == -1) {
+        b = -1;
+    }
+    console.log(b);
+    if (b == -1) {
+        coordX = poisson[j].coordX - 1*Math.random();
+        coordY = poisson[j].coordY - 1*Math.random();
+    } else {
+        coordX = poisson[j].coordX + 1*Math.random();
+        coordY = poisson[j].coordY + 1*Math.random();
+    }
+    }
+color = "blue";
+poisson[j] = new ProtoPoissons(coordX,coordY,color);
+  }}}
