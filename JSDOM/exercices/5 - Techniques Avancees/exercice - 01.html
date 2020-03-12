@@ -17,27 +17,29 @@
       var monObjet = {
         ajouter : function() {
           console.log(2+5);
+          return this;
         },
         soustraire : function() {
           console.log(2-5);
+          return this;
         },
         multiplier : function() {
           console.log(2*5);
           console.log(this);
+          return this;
         },
       }
       /*
       2. Comment obtient-on, dans une méthode, une référence à l'objet contenant la méthode ? Retournez cette référence à partir de chacune des méthodes. 
       */
        
-       monObjet.ajouter();
-       monObjet.multiplier();
+      monObjet.ajouter().soustraire().multiplier().ajouter();
 
 
       /*
       3. Exécutez les 3 méthodes sur UNE SEULE ligne.
       */
-      monObjet.$ajouter().$soustraire().$multiplier();
+      
 
       /*
       4. Créez une fonction usine qui retourne l'objet.

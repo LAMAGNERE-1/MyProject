@@ -36,11 +36,13 @@
           <canvas width="1000px" height="500px" id="mycanvas"></canvas>
     <script>
 
+    // (function() {
+
     const myCanvas = document.getElementById('mycanvas');
     // let coordX = 30;
     // let coordY = 100;
 
-    function monBocal() {
+    function creerBocal() {
         const bocal = myCanvas.getContext('2d');  
         bocal.lineWidth = "7px";
         bocal.strokeStyle = "red";
@@ -53,7 +55,7 @@
         bocal.closePath();
     }
 
-    function monEau() {
+    function creerEau() {
         const eau = myCanvas.getContext('2d');
         eau.strokeStyle = "blue";
         eau.beginPath();
@@ -71,28 +73,35 @@
             this._poisson.strokeRect(coordX, coordY, 15, 30);
     }
 
-
-    document.getElementById('aquarium').addEventListener('click',monAquarium);
-
-    function monAquarium() {
-        monBocal();
-        monEau();
-        // mesPoissons(30,100);
-        // const poisson = myCanvas.getContext('2d');
-    
-        // function ProtoPoissons(arg1,arg2,arg3) {
-        //     this._poisson = myCanvas.getContext('2d');
-        //     this._poisson.strokeStyle = 'arg3';
-        //     this._poisson.strokeRect(arg1, arg2, 15, 30);
-        // }
-        // var poisson1 = new ProtoPoissons(30,100,"orange");
-        // var poisson2 = new ProtoPoissons(50,150,"green");
-
-        for (var i = 0; i=2;i++) {
-        var arg    
-        var poisson[i] = new ProtoPoissons(30,100,"orange");
+    function creerPoisson() {
+          var arg1 = 50*(1+Math.random()) + 10*Math.random();
+          var arg2 = 150*(1+Math.random()) + 10*Math.random();
+          var color = "rgb(" + (Math.floor(256*Math.random())) +"," + (Math.floor(256*Math.random())) + "," + (Math.floor(256*Math.random())) +"";
+          var elem = new ProtoPoissons(arg1,arg2,color);
+          return elem;
         }
-    }
+
+
+    document.getElementById('aquarium').addEventListener('click',creerAquarium);
+
+    function creerAquarium() {
+        creerBocal();
+        creerEau();
+        // for (var i = 0; i<2;i++) {
+        // var poisson = creerPoisson();
+        // }
+        // console.log(poisson);
+        // console.dir(poisson);
+
+        for (var i = 0; i<2;i++) {
+        var listeDesPoissons = [];
+        listeDesPoissons[i] = creerPoisson();
+        console.log(listeDesPoissons);
+        }
+        
+    
+    } // pour function creerAquarium
+    // })(); // pour la fonction IFFE
 
 
     </script>
