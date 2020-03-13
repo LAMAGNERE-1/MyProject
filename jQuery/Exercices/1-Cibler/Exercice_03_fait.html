@@ -2,60 +2,55 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>jQuery : Exercice 04</title>
+		<title>jQuery : Exercice 03</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="..\jquery-3.4.1.js"></script>
 		<script>
 			/*********************************
 			***********PRESENTATION***********
 			**********************************
-			jQuery permet de cibler des éléments en filtrant le DOM selon différents critères :
-			_ :not() : vise tous les éléments qui ne sont pas entre parenthèses.
-			_ :even : vise les éléments impairs.
-			_ :header : vise l'ensemble des titres (h1 à h6).
+				jQuery offre également des sélecteurs pour viser, de façon précise, les enfants d'une balise.
+				Parmi ces sélecteurs, on trouve :
+				_ :first-child : premier enfant.
+				_ :first-of-type : premier enfant d'un type.
+				_ :nth-last-child() : énième élément enfant en partant de la fin.
 
-			L'ensemble des sélection par filtre se trouve ici :
-			http://api.jquery.com/category/selectors/basic-filter-selectors/
+				L'ensemble des sélecteurs sont présentés dans la documentation :
+				# http://api.jquery.com/category/selectors/child-filter-selectors/.
+				# http://api.jquery.com/category/selectors/child-filter-selectors/
 
-			La méthode css() permet de faire plusieurs modifications en passant les arguments à la méthode sous la forme d'un objet :
-				$('div').css({textAlign:'center',height:'250px'});
-			
-			Par ailleurs, jQuery offre un moyen d'exécuter du code après le chargement du document avec la commande suivante (cf. http://api.jquery.com/ready/) :
-			*/
-			$(function() {
-					//code s'exécutant après le chargement du document
-				});
-
-			/*
-				Attention, il existe plusieurs façons d'utiliser certaines méthodes. Seule celle présente ci-dessus est à utiliser avec jQuery 3 (les autres sont dépréciées).
+				La méthode css() permet aussi de modifier une valeur d'une propriété de l'objet :
+				$('p').css('height','300px');
 			*/
 
 			/**********************************
 			*************EXERCICES*************
 			***********************************
 			** 1 **
-			À la fin du chargement du document, dans le menu, mettez en minuscule toutes les entrées sauf ACCUEIL;
-				Utilisez :not() et css().
+			À la fin du chargement du document, soulignez le texte du premier paragraphe de la section.
+				Utilisez :first-child.
 			*/
 
 			/*
 			** 2 **
-			À la fin du chargement du document, dans les sous-menu, changez la couleur de fond des éléments impairs.
-				Utilisez :even et css().
+			À la fin du chargement du document, changez la couleur du premier paragraphe de la section et de l'article.
+				Utilisez :first-of-type.
 			*/
 
 			/*
 			** 3 **
-			À la fin du chargement du document, modifiez deux propriétés css des titres.
-				Utilisez :header et css().
+			À la fin du chargement du document, changez la taille de la police de l'avant-dernier lien des sous-menus.
+				Utilisez nth-last-child().
 			*/
+
 
 		</script>
 	</head>
 	<body>
 		<div id="page">
 			<header>
-					<h1>Titre du site</h1>
-					<h2>Sous-titre du site</h2>
+				<h1>Titre du site</h1>
+				<h2>Sous-titre du site</h2>
 				<nav>
 					<ul>
 						<li>
@@ -89,14 +84,12 @@
 				<p>
 					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 				</p>
-				<div>
-					<p>
-						Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-					</p>
-					<p>
-						Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-					</p>
-				</div>
+				<p>
+					Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+				</p>
+				<p>
+					Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+				</p>
 			</section>
 			<article>
 				<h2>Titre de l'article</h2>
@@ -107,9 +100,20 @@
 					Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 				</p>
 			</article>
-		</div>
+		</id>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>
+		<script>
+			$('p:first-child').css('font-style','italic');
+
+			$('p:first-of-type').css('color','red');
+
+			$('a + ul > li:nth-last-child(2)').css('font-size','28px');
+
+			// ou
+
+			$('li ul li:nth-last-child(2) a').css('color','green');
+		</script>
 	</body>
 </html>
