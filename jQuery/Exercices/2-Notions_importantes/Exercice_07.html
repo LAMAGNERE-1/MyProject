@@ -4,6 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 12</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="..\jquery-3.4.1.js"></script>
 		<script>
 			/*********************************
 			***********PRESENTATION***********
@@ -146,5 +147,14 @@
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>
+		<script>
+
+			//1
+			$('section > div > p:first-child').addClass('form_para_2');
+			$('.form_para_2').css('background-color','orange');
+
+			//2
+			$('#message').attr('a').attr("href", "https://www.google.com/").html('Lien vers Google');
+		</script>
 	</body>
 </html>
