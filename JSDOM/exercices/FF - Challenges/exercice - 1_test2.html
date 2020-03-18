@@ -39,30 +39,27 @@
           // (function() {
       
           var myCanvas = document.getElementById('mycanvas');
-
           var ctx = myCanvas.getContext('2d');  
 
           function creerBocal() {
-            const bocal = myCanvas.getContext('2d');  
-            bocal.lineWidth = "7px";
-            bocal.strokeStyle = "red";
-            bocal.beginPath();
-            bocal.moveTo(10, 50);
-            bocal.lineTo(10, 440);
-            bocal.lineTo(980, 440); 
-            bocal.lineTo(980,50);
-            bocal.stroke();
-            bocal.closePath();
+            ctx.lineWidth = "7px";
+            ctx.strokeStyle = "red";
+            ctx.beginPath();
+            ctx.moveTo(10, 50);
+            ctx.lineTo(10, 440);
+            ctx.lineTo(980, 440); 
+            ctx.lineTo(980,50);
+            ctx.stroke();
+            ctx.closePath();
           }
 
           function creerEau() {
-            const eau = myCanvas.getContext('2d');
-            eau.strokeStyle = "blue";
-            eau.beginPath();
-            eau.moveTo(10,70);
-            eau.lineTo(980,70);
-            eau.stroke();
-            eau.closePath();
+            ctx.strokeStyle = "blue";
+            ctx.beginPath();
+            ctx.moveTo(10,70);
+            ctx.lineTo(980,70);
+            ctx.stroke();
+            ctx.closePath();
           }  
 
           function ProtoPoissons(coordX,coordY,color) {
