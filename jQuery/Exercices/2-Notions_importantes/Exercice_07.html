@@ -20,11 +20,16 @@
 				Utilisez attr().
 			*/
 
+			$(function() {
+				$('section p:first-child').attr('class','changement');
+
 			/*
 			** 2 **
 				À la fin du chargement du document, créez un nouveau lien dans la balise div#message. Ajoutez à ce lien un titre ayant pour texte le titre de la page.
 				Utilisez html() et attr.
 			*/
+
+				// $('#message').html('<a href="">Quant</a>');
 
 			/*
 			** 3 **
@@ -38,8 +43,13 @@
 				Utilisez l'objet Date, la méthode getDay de l'objet Date et attr().
 			*/
 
+			});
 		</script>
 		<style>
+			.changement {
+				background:magenta;
+				color: white
+			}
 		</style>
 	</head>
 	<body>
@@ -149,12 +159,12 @@
 		</noscript>
 		<script>
 
-			//1
-			$('section > div > p:first-child').addClass('form_para_2');
-			$('.form_para_2').css('background-color','orange');
+			// //1
+			// $('section > div > p:first-child').addClass('form_para_2');
+			// $('.form_para_2').css('background-color','orange');
 
-			//2
-			$('#message').attr('a').attr("href", "https://www.google.com/").html('Lien vers Google');
+			// //2
+			// $('#message').attr('a').attr("href", "https://www.google.com/").html('Lien vers Google');
 		</script>
 	</body>
 </html>
