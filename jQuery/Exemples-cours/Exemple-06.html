@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemple 4</title>
+    <script src="jquery.js"></script>
+    <script>
+        var actions = {
+            changementsH1: function() {
+                $('h1').css({
+                    color: 'Teal',
+                    fontSize: '5em',
+                    margin: 0,
+                    textAlign: 'center'
+                });
+            },
+            desAnimations: function() {
+                $('#carre').animate({left:'40%',top:'200px'},2000).animate({left:'60%',top:'75%'},1300).animate({left:0,top:'90px'},3000,actions.mouvementEnBoucle);
+            },
+            mouvementEnBoucle: function() {
+                $('#rond').animate({left:'96%',right:0},1000).animate({
+                        right:'96%',
+                        left:0
+                    },{
+                        duration:1000,
+                        complete:function(){
+                            actions.mouvementEnBoucle();
+                        }
+                });
+            },
+            init: function() {
+                this.changementsH1();
+                this.desAnimations();
+            }
+        };
+
+        $(function(){actions.init()});
+    </script>
+    <style>
+        #carre {
+            background-color: blue;
+            height: 40px;
+            position: absolute;
+            top: 90px;
+            width: 40px;
+        }
+        #rond {
+            background-color: red;
+            border-radius: 50%;
+            bottom: 90px;
+            height: 40px;
+            position: absolute;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemple 4</h1>
+    <div id="carre"></div>
+    <div id="rond"></div>
+</body>
+</html>

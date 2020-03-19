@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery.js"></script>
+    <script>
+        var actions = {
+            masquageDiapo: function() {
+                return $('#diaporama').find('.visible').fadeOut(600).removeClass('visible');
+            },
+            affichageDiapo: function() {
+                this.$imageSuivante.fadeIn(600).addClass('visible');
+            },
+            changementDiapo: function() {
+                actions.$imageActuelle = actions.masquageDiapo();
+                if (actions.$imageActuelle.next().length) {
+                    actions.$imageSuivante = actions.$imageActuelle.next();
+                } else {
+                    actions.$imageSuivante = actions.$imageActuelle.parent().find(':first-child');
+                }
+                actions.affichageDiapo();
+            },
+            init: function() {
+                $('#diaporama img').first().show().addClass('visible');
+                setInterval(actions.changementDiapo,1000);
+            }
+        };
+
+        $(actions.init);
+    </script>
+    <title>Diaporama</title>
+    <style>
+        #diaporama {
+            height: 350px;
+            margin-left: 10%;
+            overflow: hidden;
+            position: relative;
+            width: 80%;
+        }
+
+        #diaporama img{
+            display: none;
+            left:0;
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diaporama</h1>
+    <div id="diaporama">
+        <img src="photo1.jpg" alt="Mer">
+        <img src="photo2.jpg" alt="Mer">
+        <img src="photo3.jpg" alt="Mer">
+    </div>
+</body>
+</html>

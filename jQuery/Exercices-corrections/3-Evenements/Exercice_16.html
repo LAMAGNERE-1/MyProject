@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 16</title>
+		<script src="../jquery.js"></script>
+		<script>
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        jQuery permet d'ajouter du contenu avant ou après un élément de la façon suivante :
+        _ append() : insère du contenu à la fin de la sélection ;
+      	_ prepend() : insère du contenu au début de la sélection ;
+      	_ before() : insère du contenu avant la sélection ;
+      	_ after() : insère du contenu après la sélection.*/
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+      ** 1 **
+      	Créez une page contenant trois ensembles titre / paragraphe.
+      	Ajoutez un trait de séparation (<hr/>) au chargement du document.
+
+      	Utilisez la méthode after().
+      */
+		$(function() {
+			$('h2 + p').not(':last-of-type').after('<hr/>');
+      /*
+      ** 2 **
+      	Ajoutez une image entre deux paragraphes. Au chargement du document, un cercle plein est placé à chaque coin de l'image, derrière celle-ci (indice : mettez l'image dans une div. Cette div contiendra quatre span positionnées aux angles de cette div).
+
+      	Utilisez prepend() et append().
+      */
+			$('div').prepend('<span id="un"></span><span id="deux"></span>');
+			$('div').append('<span id="trois"></span><span id="quatre"></span>');
+		});
+	</script>
+	<style>
+		div {
+			margin-left: 20%;
+			position: relative;
+			width: 60%;
+		}
+
+		div img {
+			width: 100%;
+		}
+
+		div span {
+			background-color: magenta;
+			border-radius: 50%;
+			display: block;
+			height: 30px;
+			position: absolute;
+			width: 30px;
+		}
+
+		#un, #deux {
+			top: -15px;
+		}
+
+		#deux, #quatre {
+			right: -15px;
+		}
+
+		#trois, #quatre {
+			bottom: -15px;
+		}
+
+		#un, #trois {
+			left: -15px;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>Exercice 16</h1>
+		<h2>Sous-titre</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium eaque nisi dolores, sequi corporis beatae quasi iusto odit dicta quidem a, recusandae inventore dolorum neque repudiandae aliquam quas! Ad aliquam aut ab a! Quisquam sint earum facere odit. Id ipsa molestias, et quod corporis eligendi. Laboriosam autem non voluptate!</p>
+		<h2>Sous-titre</h2>
+		<p>Temporibus quod, esse minus cumque neque explicabo. Beatae possimus, tenetur impedit optio dicta dolores tempora asperiores cum voluptates nobis dignissimos, veritatis voluptate nisi architecto error! Exercitationem officiis consectetur minus quo. Expedita debitis commodi dolores ipsa sequi a cum iste soluta est quod eaque rerum doloribus nisi voluptatum, sed earum ipsum?</p>
+		<div>
+			<img src="photo1.jpg" alt="Mer">
+		</div>
+		<h2>Sous-titre</h2>
+		<p>Doloremque ducimus officiis in eligendi repudiandae ex aut voluptatum eius quia quidem perferendis deserunt quod eos soluta assumenda perspiciatis, placeat voluptates nam labore, delectus ab nobis saepe necessitatibus. Adipisci minus possimus ab distinctio cupiditate placeat natus laboriosam optio. Eaque commodi nisi blanditiis optio eveniet ab earum libero in saepe veritatis.</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+	</body>
+</html>

@@ -2,42 +2,88 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>jQuery : Exercice 14</title>
+		<title>jQuery : Exercice 10</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="../jquery.js"></script>
 		<script>
       /*********************************
       ***********PRESENTATION***********
       **********************************
-        Il est possible avec jQuery d'intercepter l'usage des touches de clavier :
-        keypress() : appui et maintien sur la touche du clavier
-        keyup() : appui sur la touche du clavier
-        keydown() : relâchement d'une touche du clavier
-        
-        Par exemple :
-        $('div').keypress(function(evenement){
-          console.log(evenement.which).
-        });
-        
-        La valeur de la touche enfoncée est renvoyé ici (dans le cas de keyup et keydown, il s'agit du code ASCII de la touche).
-        
+        Les méthodes resize() et scroll() permettent de capturer des événements dans le navigateur et déclencher à chaque fois une fonction.
+        resize() : taille de la fenêtre
+        scroll() : mouvement d'un ascenseur.
       */
 
       /**********************************
       *************EXERCICES*************
       ***********************************
-        Créez une page vide contenant un petit bloc coloré.
+      ** 1 **
         À la fin du chargement du document, prévoyez le script suivant :
-        a) Dirigez le bloc dans la page avec les touches fléchées.
-        b) Le bloc change de couleur durant le mouvement.
-        
-        N.B. : les ascenseurs de la fenêtre ne doivent pas bouger (utilisez evenement.preventDefault()).
-        
-        Utilisez les méthodes keyup(), keydown() et css().
+        a) Chaque fois que vous redimensionnez la fenêtre du navigateur, vous récupérez la largeur du body.
+        b) Si la largeur est inférieure ou égale à 920px, modifiez la disposition des colonnes du texte
+        c) Si la largeur est inférieure ou égale à 640px, réduisez la taille de la police
+        d) Si la largeur est supérieure à 920px, remettez le style dans l'état initial.
 
+        Utilisez les méthodes resize(), css(), addClass() et removeClass().
       */
+			$(function() {
+
+				$(window).resize(function() {
+					var largeurBody = parseFloat($('body').css('width'));
+					if (largeurBody <= 920) {
+						$('section div p').addClass('une-colonne');
+						
+						if (largeurBody <= 640) {
+							$('body').addClass('reduction-police');
+						}
+					} else {
+						$('section div p,body').removeClass('une-colonne reduction-police')
+					}
+				});
+      /*
+      ** 2 **
+        À la fin du chargement du document, prévoyez le script suivant :
+        a) Chaque fois que vous utilisez l'ascenseur vertical, affichez une petite image sur le bord gauche et au milieu (utilisez fixed en css).
+        b) Quand le mouvement s'arrête, masquez cette image.
+
+        Utilisez les méthodes scroll() et css().
+      */
+			var $img = $('body > img');
+			var arret;
+
+			$(window).scroll(function() {
+				$img.css('display','block');
+				
+				if (arret) {
+					clearTimeout(arret);
+				}
+				
+				arret = setTimeout(function() {
+					$img.css('display','none');
+				},400);
+			});
+		});
 		</script>
+		<style>
+			.une-colonne {
+				margin: 10px 0;
+				width: 100%;
+			}
+
+			.reduction-police {
+				font-size: 0.8em;
+			}
+
+			body > img {
+				display: none;
+				left: 10px;
+				position: fixed;
+				top: calc(50% - 64px);
+			}
+		</style>
 	</head>
 	<body>
+		<img src="fusee.jpg" alt="Une fusée">
 		<div id="page">
 			<header>
 				<h1>Titre du site</h1>

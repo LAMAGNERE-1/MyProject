@@ -4,6 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 10</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="..\jquery-3.4.1.js"></script>
 		<script>
       /*********************************
       ***********PRESENTATION***********
@@ -25,6 +26,18 @@
 
         Utilisez les méthodes resize(), css(), addClass() et removeClass().
       */
+		var actions = {
+			affichage : function() {
+				alert($('body').width());
+			},
+		};
+		
+		$(function() {
+			$(window).resize(function(){
+				actions.affichage();
+				});
+
+				
 
       /*
       ** 2 **
@@ -34,7 +47,7 @@
 
         Utilisez les méthodes scroll() et css().
       */
-
+		});
 		</script>
 	</head>
 	<body>

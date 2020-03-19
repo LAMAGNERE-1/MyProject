@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 14</title>
+		<script src="../jquery.js"></script>
+		<script>
+      /*********************************
+      ***********PRESENTATION***********
+      **********************************
+        Il est possible avec jQuery d'intercepter l'usage des touches de clavier :
+        keypress() : appui et maintien sur la touche du clavier
+        keyup() : appui sur la touche du clavier
+        keydown() : relâchement d'une touche du clavier
+        
+        Par exemple :
+        $('div').keypress(function(evenement){
+          console.log(evenement.which).
+        });
+        
+        La valeur de la touche enfoncée est renvoyé ici (dans le cas de keyup et keydown, il s'agit du code ASCII de la touche).
+        
+      */
+
+      /**********************************
+      *************EXERCICES*************
+      ***********************************
+        Créez une page vide contenant un petit bloc coloré.
+        À la fin du chargement du document, prévoyez le script suivant :
+        a) Dirigez le bloc dans la page avec les touches fléchées.
+        b) Le bloc change de couleur durant le mouvement.
+        
+        N.B. : les ascenseurs de la fenêtre ne doivent pas bouger (utilisez evenement.preventDefault()).
+        
+        Utilisez les méthodes keyup(), keydown() et css().
+
+      */
+		$(function() {
+			// Code des touches du clavier :
+			// haut : 38
+			// bas : 40
+			// droite : 39
+			// gauche : 37
+			var $carre = $('.carre');
+			$(document).keydown(function(evenement) {
+				evenement.preventDefault();
+				$carre.css('background-color','red');
+				switch (evenement.which) {
+					case 38:
+						var valeur = parseFloat($carre.css('top')) - 5;
+						$carre.css('top',valeur);
+						break;
+					case 39:
+						console.log(39)
+						$carre.css('left',parseFloat($carre.css('left')) + 5);
+						break;
+					case 40:
+						$carre.css('top',parseFloat($carre.css('top')) + 5);
+						break;
+					case 37:
+						$carre.css('left',parseFloat($carre.css('left')) - 5);
+						break;
+				}
+			});
+			$(document).keyup(function(evenement) {
+				$carre.css('background-color','');
+			});
+		});
+		</script>
+		<style>
+			.carre {
+				background-color: green;
+				height: 30px;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carre"></div>
+	</body>
+</html>
